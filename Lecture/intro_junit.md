@@ -1,5 +1,5 @@
-
-## JUnit Automatic Testing
+JUnit Automatic Testing
+===
 
 > [Junit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)
 
@@ -50,37 +50,38 @@ JUnit 是一個用於 Java 程序的單元測試框架。它是開發人員用�
     </dependency>
 </dependencies>
 ```
+ps. see [mvnrepository](https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter/5.12.0)
 
-3. Reload to download the Junit packages
-4. Go to the file to be tested
-5. Navigate >> Test OR right-click the mouse, choose Go To, and choose Test
-6. Select the function you want to test
+3. 重新載入以下載 JUnit 套件
+4. 前往要測試的檔案
+5. 導覽 >> 測試 OR 按滑鼠右鍵，選擇「Go」，然後選擇「Test」
+6. 選擇您想要測試的函數
 
-**JUnit 5** is a popular testing framework in the Java ecosystem that allows developers to write and execute unit tests for their Java applications. It is the latest version of the JUnit framework, offering significant improvements over its predecessor, JUnit 4. JUnit 5 is modular, extensible, and designed to support modern testing needs, making it a go-to choice for Java developers.
+**JUnit 5** 是 Java 生態系統中廣受歡迎的測試框架，它讓開發人員能夠為其 Java 應用程式編寫和執行單元測試。它是 JUnit 框架的最新版本，相較於其前身 JUnit 4 提供了顯著的改進。JUnit 5 具有模組化、可擴展性，並且專為支援現代測試需求而設計，使其成為 Java 開發人員的首選。
 
-#### JUnit modules
+#### JUnit 5 模組
 
-JUnit 5 is composed of three main modules:
+JUnit 5 由三個主要模組組成：
 
-1. **JUnit Platform**:
-   - **Role**: The foundation for launching testing frameworks on the JVM.
-   - **Features**:
-     - Launches test frameworks.
-     - Defines the `TestEngine` API for developing testing frameworks that run on the platform.
-     - Integrates with build tools like Maven, Gradle, and IDEs like IntelliJ IDEA and Eclipse.
+1. **JUnit Platform**：
+   - **角色**：在 JVM 上啟動測試框架的基礎。
+   - **特色**：
+     - 啟動測試框架。
+     - 定義用於開發在平台上運行的測試框架的 `TestEngine` API。
+     - 與 Maven、Gradle 等建構工具以及 IntelliJ IDEA 和 Eclipse 等 IDE 整合。
 
-2. **JUnit Jupiter**:
-   - **Role**: Provides the new programming model and extension model for writing tests.
-   - **Features**:
-     - Contains the JUnit 5 API for writing tests (e.g., `@Test`, `@BeforeEach`).
-     - Introduces new annotations and test lifecycle methods.
-     - Supports parameterized tests, nested tests, and dynamic tests.
+2. **JUnit Jupiter**：
+   - **角色**：提供用於編寫測試的新程式設計模型和擴展模型。
+   - **特色**：
+     - 包含用於編寫測試的 JUnit 5 API（例如，`@Test`、`@BeforeEach`）。
+     - 引入新的註解和測試生命週期方法。
+     - 支援參數化測試、巢狀測試和動態測試。
 
-3. **JUnit Vintage**:
-   - **Role**: Provides backward compatibility with JUnit 3 and JUnit 4 tests.
-   - **Features**:
-     - Allows you to run older JUnit 3 and 4 tests alongside JUnit 5 tests.
-     - Useful for projects migrating from JUnit 3/4 to JUnit 5.
+3. **JUnit Vintage**：
+   - **角色**：提供與 JUnit 3 和 JUnit 4 測試的向後相容性。
+   - **特色**：
+     - 允許您與 JUnit 5 測試一起運行較舊的 JUnit 3 和 4 測試。
+     - 對於從 JUnit 3/4 遷移到 JUnit 5 的專案很有用。
 
 
 #### An Example
@@ -212,13 +213,13 @@ class StandardTests {
 * multiply(int, int): int
 * divide(int, int): double 
 
-See Demo [demo/Calculator](../../Intellij/DemoJunit/src/main/java/demo/Calculator.java)
+See Demo [demo/Calculator](https://github.com/nlhsueh/sw-testing24/blob/main/Intellij/DemoJunit/src/main/java/demo/Calculator.java)
 
 LAB: 
 1. 修改 Calculator, 增加 subtract() 減法
 2. 做一個會拋出例外的測試，例如 `5/0` （參考 [JUnit doc- assertThrows()](https://junit.org/junit5/docs/current/user-guide/#writing-tests-assertions)）
-4. 參考 [JUnit doc- Assertion](https://junit.org/junit5/docs/current/user-guide/#writing-tests-assertions), 採用 assertAll() 進行多個測試。說明 assertAll() 的好處
-5. 修改 Calculator, 增加 arrayAdd(), 針對兩個大小一樣的陣列進行相加，回傳結果。(`assertArrayEquals()`)
+3. 參考 [JUnit doc- Assertion](https://junit.org/junit5/docs/current/user-guide/#writing-tests-assertions), 採用 assertAll() 進行多個測試。說明 assertAll() 的好處
+4. 修改 Calculator, 增加 arrayAdd(), 針對兩個大小一樣的陣列進行相加，回傳結果。(`assertArrayEquals()`)
 
 Read more about my [assertAll()](#assertall)
 
@@ -228,11 +229,11 @@ Read more about my [assertAll()](#assertall)
 
 ![test life cycle](../img/junit_life_cycle.png)
 
-See Demo [demo/Life cycle](../../Intellij/DemoJunit/src/test/java/demo/LifeCycleTest.java)
+See Demo [demo/Life cycle](https://github.com/nlhsueh/sw-testing24/blob/main/Intellij/DemoJunit/src/test/java/demo/LifeCycleTest.java)
 
 #### Lab: People
 
-My [xdemo/People](../../Intellij/DemoJunit/src/main/java/xdemo/People.java) 封裝了姓名、身高、體重、BMI、還有父親的關係。這個程式可能有錯誤。
+My [xdemo/People](https://github.com/nlhsueh/sw-testing24/blob/main/Intellij/DemoJunit/src/main/java/xdemo/People.java) 封裝了姓名、身高、體重、BMI、還有父親的關係。這個程式可能有錯誤。
 
 Lab:
 1. 針對進行 BMI 的測試，注意小數點誤差的情況，可使用 delta 的參數。
@@ -251,7 +252,7 @@ Read [JUnit doc- AssertionDemo](https://junit.org/junit5/docs/current/user-guide
 
 #### Lab: Improve Testability
 
-My [xdemo/Triangle](../../Intellij/DemoJunit/src/main/java/xdemo/Triangle.java) is a code for checking type of Triangle. But it is not easy to test- I can't use JUnit to test it.
+My [xdemo/Triangle](https://github.com/nlhsueh/sw-testing24/blob/main/Intellij/DemoJunit/src/main/java/xdemo/Triangle.java) is a code for checking type of Triangle. But it is not easy to test- I can't use JUnit to test it.
 
 Lab
 1. Please refactoring the code, make it easy to test
@@ -259,7 +260,7 @@ Lab
 
 #### Lab: Testing array
 
-My [RobustBubbleSort](../../Intellij/DemoJunit/src/main/java/xdemo/RobustBubbleSort.java) is a code for sorting data. But it is not easy to test- I can't use JUnit to test it.
+My [RobustBubbleSort](https://github.com/nlhsueh/sw-testing24/blob/main/Intellij/DemoJunit/src/main/java/xdemo/RobustBubbleSort.java) is a code for sorting data. But it is not easy to test- I can't use JUnit to test it.
 
 Lab
 1. Please refactoring the code, make it easy to test
@@ -269,11 +270,11 @@ Lab
 
 > 設計一個 `BinarySearch` 類別，包含 `search(int key, int[] array)` 方法，該方法接受一個目標數字 `key` 和已排序的整數陣列 `array`，並回傳一個 `Result` 物件；`Result` 包含布林值 `Found`，表示是否找到目標數字，及整數 `index`，為目標數字在陣列中的索引位置（若未找到則為 -1）。
 
-ps. [Reference code](../../Intellij/DemoJunit/src/main/java/demo/BinarySearch.java) 
+ps. [Reference code](https://github.com/nlhsueh/sw-testing24/blob/main/Intellij/DemoJunit/src/main/java/demo/BinarySearch.java) 
 
 > Write the test cases for testing the `BinarySearch` using Equivalence Partition method.
 
-ps. [Reference code](../../Intellij/DemoJunit/src/test/java/demo/BinarySearchTest.java) 
+ps. [Reference code](https://github.com/nlhsueh/sw-testing24/blob/main/Intellij/DemoJunit/src/test/java/demo/BinarySearchTest.java) 
 
 Discuss: is the test case enough?
 
@@ -389,9 +390,9 @@ class DisplayNameDemo {
     }
 ```
 
-See my [LifeCycleTest](../../Intellij/DemoJunit/src/test/java/demo/LifeCycleTest.java) to see how it works.
+See my [LifeCycleTest](https://github.com/nlhsueh/sw-testing24/blob/main/Intellij/DemoJunit/src/test/java/demo/LifeCycleTest.java) to see how it works.
 
-See my [DisplayNameTest](../../Intellij/DemoJunit/src/test/java/demo/DisplayNameTest.java) to see how it works.
+See my [DisplayNameTest](https://github.com/nlhsueh/sw-testing24/blob/main/Intellij/DemoJunit/src/test/java/demo/DisplayNameTest.java) to see how it works.
 
 
 ### Demo: DisplayName Generator
@@ -499,11 +500,11 @@ public class MathTest {
 
 #### Lab: Triangle
 
-* Test [demo/Triangle](../../Intellij/DemoJunit/src/main/java/demo/Triangle.java) using `@CsvSource`
+* Test [demo/Triangle](https://github.com/nlhsueh/sw-testing24/blob/main/Intellij/DemoJunit/src/main/java/demo/Triangle.java) using `@CsvSource`
 
 #### Lab: Tomorrow
 
-以下範例是對 `tomorrow()` 進行測試， csv 內部前三個參數是輸入的日期，後三個數字是預期的輸出。輸出的結果我們都轉為 String 一次比較年月日是否相同。See my [xdemo/MyDate](../../Intellij/DemoJunit/src/main/java/xdemo/MyDate.java)
+以下範例是對 `tomorrow()` 進行測試， csv 內部前三個參數是輸入的日期，後三個數字是預期的輸出。輸出的結果我們都轉為 String 一次比較年月日是否相同。See my [xdemo/MyDate](https://github.com/nlhsueh/sw-testing24/blob/main/Intellij/DemoJunit/src/main/java/xdemo/MyDate.java)
 
 ```java
 @ParameterizedTest

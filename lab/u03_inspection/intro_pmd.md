@@ -473,10 +473,11 @@ mvn pmd:check
 
 打開 `target/report/pmd.html`, 觀看錯誤。在頁面上對於該違規如果不清楚，可以直接點擊觀看該違規，會引導到 PMD 的網站觀看說明。修正程式碼後可以再次執行 verify。
 
-#### 5. 調整規則
+### 調整規則
 如果有規則實在不符合你的需要， 例如 CommentSize 原先設定最大行數與長度分別為 6 與 80, 你可以修改：
 
-* 修改規則參數
+
+#### 修改規則參數
 ```xml
     <!--  override the rules  -->
     <rule ref="category/java/documentation.xml/CommentSize">
@@ -487,7 +488,9 @@ mvn pmd:check
     </rule>
 ```
 
-* 排除規格: 例如將 SystemPrintln 與 AvoidReassigningParameters 排除
+#### 排除規格
+
+例如將 SystemPrintln 與 AvoidReassigningParameters 排除
 
 ```xml
     <rule ref="category/java/bestpractices.xml">
@@ -496,7 +499,7 @@ mvn pmd:check
     </rule>
 ```
 
-* 忽略警告
+#### 忽略警告
 如果某些程式碼不適合檢查規則，可以透過 `@SuppressWarnings("PMD")`，讓警告不要出現在報告中。
 
 ```java
@@ -509,7 +512,21 @@ public class Main {
 ...        
 ```
 
-詳細可以參考 [這裡](#忽略違規)
+---
+
+#### 違規層級與警告之設定
+如果您想控制 PMD 對違規嚴重程度的行為，您可以調整「pom.xml」中的設定。以下是一些選項：
+
+1. **Set Minimum Severity**: 您可以設定最低嚴重性級別，必須違反該級別 PMD 才能導致建置失敗。例如，您可以指定僅在「error」等級違規時失敗：
+
+2. **Fail on Violations**: If you want to ensure that the build fails only if there are "critical" issues, you can manage this through configurations like:
+
+   ```xml
+   <configuration>
+       <failOnViolation>true</failOnViolation>
+       <minimumPriority>2</minimumPriority> <!-- Only fail on error and critical issues -->
+   </configuration>
+   ```
 
 #### 管理違規
 
@@ -532,22 +549,6 @@ public class Main {
    這設定了 PMD 規則的最低優先級。PMD 中的優先級範圍是從 1 到 5，1 表示最高優先級，5 表示最低優先級。當設置為 `minimumPriority` 為 3 時，PMD 只會報告優先級為 3 或更高的違規行為，較低優先級的違規（4 和 5）將會被忽略，不會報告。
 
 此配置的目的是控制 PMD 檢查的嚴格程度，以及哪些問題會導致構建失敗。
-
-如果您想控制 PMD 對違規嚴重程度的行為，您可以調整「pom.xml」中的設定。以下是一些選項：
-
-1. **Set Minimum Severity**: 您可以設定最低嚴重性級別，必須違反該級別 PMD 才能導致建置失敗。例如，您可以指定僅在「error」等級違規時失敗：
-
-
-2. **Fail on Violations**: If you want to ensure that the build fails only if there are "critical" issues, you can manage this through configurations like:
-
-   ```xml
-   <configuration>
-       <failOnViolation>true</failOnViolation>
-       <minimumPriority>2</minimumPriority> <!-- Only fail on error and critical issues -->
-   </configuration>
-   ```
-
-3. **Ignoring Certain Rules**: If some violations are not critical, consider excluding specific rules from your ruleset that generate excessive warnings or are not applicable to your project's context.
 
 ### 忽略違規
 
