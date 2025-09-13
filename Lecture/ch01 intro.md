@@ -1,14 +1,12 @@
 # Ch01 簡介
 
-:::info
-大家都知道物質不滅定律; 我們更熟悉 Bug 不滅定律。
-:::
-
+> 😅 大家都知道物質不滅定律; 我們更熟悉 Bug 不滅定律。
 
 ## 1.1 軟體危機
 
+<center>
 <img src = "https://hackmd.io/_uploads/HkUgfsBRn.png" width=200>
-
+</center><br>
 
 水能載舟亦能覆舟，軟體也是如此，有許多軟體問題造成飛機失事，造成醫療糾紛，財務的損失等。
 
@@ -53,105 +51,85 @@
 - 2021，[廠商出錯-上萬學生學習歷程檔案遺失 教育部：全力救援資料](https://tw.news.yahoo.com/%E5%BB%A0%E5%95%86%E5%87%BA%E9%8C%AF-%E4%B8%8A%E8%90%AC%E5%90%8D%E5%AD%B8%E7%94%9F%E5%AD%B8%E7%BF%92%E6%AD%B7%E7%A8%8B%E6%AA%94%E6%A1%88%E9%81%BA%E5%A4%B1-%E8%B3%87%E6%96%99%E6%95%91%E6%8F%B4%E4%B8%AD-015149387.html)
 - 2014，[臺灣高速公路收費系統](https://www.ithome.com.tw/people/116441)。
 
-![etag](https://www.freeway.gov.tw/Upload/Html/201618126/p03-2-s.jpg)
-
---
+---
 
 解決這些問題就是軟體工程與軟體品質工程應該要做的事。也是這門課，這本課程的目的。
 
-> 軟體和教堂非常相似——建成之後我們就開始祈禱。
-> Software and cathedrals are much the same – first we build them, then we pray. (Sam Redwine)}
+> 😂 軟體和教堂非常相似——建成之後我們就開始祈禱。
+>> Software and cathedrals are much the same – first we build them, then we pray. (Sam Redwine)
 
-❓ 有哪些你印象深刻的軟體品質事件？
+💡💬 有哪些你印象深刻的軟體品質事件？
 
 ## 1.2 軟體品質
 
-:::info
-人們會忘記你做的多快，但總記得你做的多好。
-> People forget how fast you did a job- but they always remember how well you did it. (Howard Newton.)
-:::
+> 👍 人們會忘記你做的多快，但總記得你做的多好。
+>> People forget how fast you did a job- but they always remember how well you did it. (Howard Newton.)
 
 ### 1.2.1 軟體
 
 軟體是什麼？僅是可以執行的程式碼嗎？IEEE  的定義更為廣泛：
 
-
 > Computer **programs**, **procedures**, and possibly associated **documentation** and **data** pertaining to the operation of a computer system. That is, software is consisted of *code*, *procedure*, *documentation*, *data* necessary for *operating* the software system.
 
 除了程式碼以外，操作的程序、資料、文件是「軟體」的範圍。就像華航事件一般，多少是操作的問題所引起的，所以再考量軟體品質時，不能不把這些考量在內。
 
-> 程式必須是為了給人看而寫，命令機器執行只是附帶任務。
+> 😳 程式必須是為了給人看而寫，命令機器執行只是附帶任務。
 >> Programs must be written for people to read, and only incidentally for machines to execute. (Abelson / Sussman)
 
 ### 1.2.2 品質
 
-
 各行各業每一種物品或流程都有其品質的定義，很難從單一的角度來定義品質。哈佛的教授 David Garvin 在他的書中 Managing Quality, 提出從各種不同的角度來看品質:
 
-:::info
 - **超自然觀點** Transcendental view。無法直接定義品質，但看（感受）到後就知道好壞。abstract but can be recognized if it is present.
 - **使用者觀點** User view。符合使用者需求的程度。fitness for purpose or meeting user's needs.
 - **製造觀點** Manufacturing view。符合流程的標準，例如通過 ISO 的認證。conformance to process standard.
 - **產品觀點** Product view。產品本身的材質，例如樟木所做的桌子。inherent characteristics in the product itself.
 - **價值觀點** Valued based view。顧客是否願意掏錢出來買。customers' willingness to pay for a software.
-:::
 
-❓在你接觸的事物或軟體中，哪些是品質優良的？為什麼？符合 Garvin 的哪一個觀點呢？
+💡💬 在你接觸的事物或軟體中，哪些是品質優良的？為什麼？符合 Garvin 的哪一個觀點呢？
 
-```
-> 手機啊
-> ... 除了手機以外的產品
+> 👍 所謂的品質就是當沒有人看時，仍然把事情做對
+>> Quality means doing it right when no one is looking.- Henry Ford
 
-```
-
-> :+1: 所謂的品質就是當沒有人看時，仍然把事情做對
-> Quality means doing it right when no one is looking.- Henry Ford
-
-> :+1: 品質不是動作，是一種習慣
-> Quality is not an act. It is a habit- Aristotle)
+> 👍 品質不是動作，是一種習慣
+>> Quality is not an act. It is a habit- Aristotle)
 
 ### 1.2.1 軟體品質
 
 軟體有其獨特性，其品質的定義也略有不同。我們看以下三種軟體品質的定義：
 
-> 一個系統，元件或流程滿足所指定的需求的程度。
-> The degree to which a system, component, or process meets specified requirements. (Crosby, 1979)
+> 1️⃣ 一個系統，元件或流程滿足所指定的需求的程度。
+>> The degree to which a system, component, or process meets specified requirements. (Crosby, 1979)
 
 這樣的定義著重在「需求規格」。問題是，規格書通常都寫的不完整，以致於滿足規格書的系統，卻不能滿足使用者。
 
-> 一個系統，元件或流程滿足顧客或使用者的需求或期望的程度
-> The degree to which a system, components, or process meets customer or user needs or expects (Juran, 1998)
+> 2️⃣ 一個系統，元件或流程滿足顧客或使用者的需求或期望的程度
+>> The degree to which a system, components, or process meets customer or user needs or expects (Juran, 1998)
 
 這樣的定義加強了使用者的需要與期望。但難道只要符合使用者的期待就是好的軟體嗎？Pressman  的定義加強了「專業軟體」的期望，例如在可維護性等特性，這些是使用者不會期待的特性，但卻是與品質有著強烈的關聯。
 
-:::info
 **Software Quality**: 
-> * 符合明訂的功能與效能需求，明訂的開發標準，及非明定的專業軟體特性的程度。
-> * Conformance to explicitly state functional and performance requirements, explicitly documented development standards, and implicit characteristics that are expected of all professionally developed software (Pressman)
-:::
-
-[好的品質應考慮系統設計的可維護性](https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/380580424_334332642497996_1330562078593191187_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=5614bc&_nc_ohc=XgaA_N8XpyEAX_2lOl3&_nc_ht=scontent-tpe1-1.xx&oh=00_AfD3_G73Va6GOxxzgG-LnyzYS28n9SkkMBognXWaSLvLuw&oe=65155309)
+> 3️⃣ 符合明訂的功能與效能需求，明訂的開發標準，及非明定的專業軟體特性的程度。
+>> Conformance to explicitly state functional and performance requirements, explicitly documented development standards, and implicit characteristics that are expected of all professionally developed software (Pressman)
 
 這樣的定義似乎聽之有理，但仍然模糊。我們透過「品質模型」的描述，可以更了解何謂軟體品質。
 
-> 測試技巧可以短時間培養，建立品質文化需要長時間培養
+> 👍 測試技巧可以短時間培養，建立品質文化需要長時間培養
 
 
 ## 1.3 品質模型
 
 每一個產業都有各自的品質模型，做簡易家具的不會考慮到「維護性」的議題，椅子壞了換掉就是了，但汽車產業就一定要考慮到維護性，所以維護性是汽車產業的品質模型中的品質特性。
 
-FIG: 不同物品的品質特性各有不同
-
 <img src="https://hackmd.io/_uploads/BJFQmsH03.png" width="500">
 
+👉 不同物品的品質特性各有不同
 
 擴充性和跨平台執行就不是汽車產業重要的品質項目之一，但對軟體產業來說卻是非常的重要。不同產業、物品有其不同的品質模型。軟體品質模型有很多，例如 McCall, Boehm's Quality model, FURPS+ model 和 ISO 9126 ，以下我們介紹 ISO 9126 的品質模型。
 
 ### 1.3.1 ISO 9126
 
 ISO 9126 將品質分為六大特性，如 Fig ISO ，每一個特性下又分為若干個次因子，以下分項說明。
-
 
 ![](https://hackmd.io/_uploads/r1YdmoB03.png)
 
@@ -172,8 +150,9 @@ ISO 9126 將品質分為六大特性，如 Fig ISO ，每一個特性下又分�
 - **安全性** Security 
     - 是否能夠阻擋非法的存取或控制。This subcharacteristic relates to unauthorized access to the software functions.
 	
-> 我們有時間做多餘的功能，卻沒有時間把必要的功能做對。
+> 🫣 我們有時間做多餘的功能，卻沒有時間把必要的功能做對。
 
+---
 
 #### 二、可靠性 Reliability
 
@@ -181,7 +160,6 @@ ISO 9126 將品質分為六大特性，如 Fig ISO ，每一個特性下又分�
 
 可靠度也與系統的回復能力有關係，系統失效後如果能夠立即恢復正常可靠度也還可接受，但若要停很久或是回復有部分的資料遺失就表示可靠度差。如果有一間公司每一天做一次磁帶備份，則系統出現嚴重問題時，需要將磁帶的東西倒回系統，中間就可能喪失一天的資料，而且磁帶的回復所需要的時間會比較久。如果是使用備援的架構，資料在寫入時是同時寫入兩個系統，當其中一個出現問題可以立刻切換到另一個系統，其可靠度就比較好。當然，所需要花費的經費就比較高。
 
-  
 - **成熟度** Maturity 失效的次數越少成熟度越高。
     - This subcharacteristic concerns frequency of failure of the software. 
     - 可靠度的評量通常可用 MTTF（mean time to failure） 來計算，就是平均多久失效一次。
@@ -190,6 +168,7 @@ ISO 9126 將品質分為六大特性，如 Fig ISO ，每一個特性下又分�
 - **回復性** Recoverability 
     - 當環境或其他元件出錯時，能夠回復到正常運行的能力。例如有些系統要一天後才能回復，有些系統指需要停機一小時。有一些系統一個星期才備份一次，所以系統回復時可能喪失一個星期的資料，就是回復性差。
 
+---
 
 #### 三、可用性 Usability
 
@@ -206,30 +185,31 @@ ISO 9126 將品質分為六大特性，如 Fig ISO ，每一個特性下又分�
 
 可用性如何檢驗？我們可以透過學習的時間數或是產能來做量化的計算。例如你設計一個需要資管人員輸入的收費單系統，如果有經驗的資管人員一小時只能打10 個停車單，表示系統的設計有問題。如果設計上有很多快速鍵，移動也很方便，一個資管人員一小時可以打上30-40 個停車單。
 
-> :joy: 如今的程式是一場工程師和上帝的競賽，工程師要開發出更大更好、傻瓜都會用到軟體; 而上帝在努力創造出更大更傻的傻瓜。目前為止，上帝是贏的。
-> Programming today is a race between software engineers striving to build bigger and better idiot-proof programs, and the universe trying to produce bigger and better idiots. So far, the universe is winning. (Rick Cook)
+> 🫠 如今的程式是一場工程師和上帝的競賽，工程師要開發出更大更好、傻瓜都會用到軟體; 而上帝在努力創造出更大更傻的傻瓜。目前為止，上帝是贏的。
+>> Programming today is a race between software engineers striving to build bigger and better idiot-proof programs, and the universe trying to produce bigger and better idiots. So far, the universe is winning. (Rick Cook)
+
+---
 
 #### 四、效能 Efficiency
 
 主要著眼在系統提供功能時系統資源被使用的狀況：磁碟空間，記憶體空間，網路用量等。
 
 附帶一提，許多品質因子是相互有關係的，例如有效性與可用性是息息相關的- 如果效能太低，可用性是不可能高的。
-
   
 - **時間效能** Time behavior  回應時間的長短。或是單位時間能夠處理的量。
 - **資源效能** Resource behavior  
     - 消耗資源的多寡。例如  memory, cpu, disk and network usage。一般而言，時間效能越好資源校能越差，反之亦然。
     - 例如一個系統需要上傳照片，但解析度的要求並不高，現代多半用收機拍照後上傳，檔案可能上到5M，當量大的時候就會造成很大的負擔。如果我們能夠在系統上傳之時做壓縮或是轉換其解析度，這系統吃的資源就不會那麼重了。
 
-> 時間效能和資源效能常常會相互衝突，設計需要取捨-- 這也是為什麼品質沒有絕對，需要與使用者或設計師商討。
+> 💡 時間效能和資源效能常常會相互衝突，設計需要取捨-- 這也是為什麼品質沒有絕對，需要與使用者或設計師商討。
+
+---
 
 #### 五、可維護性 Maintainability
-
 
 容不容易找出錯誤並進而修復錯誤是「可維護性」所關注的。使用者通常會忽略這個因子，（因為不關他的事），也因此常常會忽略。軟體公司的主管急著系統上線，也不太會關心這一點。工程師雖然關心，但常因為時程壓力而忽略掉，或是覺得程式是自己寫的維護一定沒有問題，所以也常常忽略。系統過了幾年，換了幾個人維護後，可維護性就更困難了。
 
 此因此與系統的結構有很大的關係，包含程式的可讀性，複雜性和模組性。
-
   
 - **可分析性 Analyzability** 是否容易找出錯誤的原因。系統運行的時候如果能夠留下 log，則有助於其可分析性。
 - **可變動性 Changeability**	要花多少力氣來改變系統？例如新增一個功能需要花幾個人月（man-power, man-month）。
@@ -238,14 +218,15 @@ ISO 9126 將品質分為六大特性，如 Fig ISO ，每一個特性下又分�
     - 系統的可測試性高不高？測試環境是否容易建立？虛擬模組容不容易建置？是否有相關的測試資料？
     - 自動化測試。edx 是一個多人線上學習 MOOCs 系統，它是用 python 開發的開源系統，裡面除了很多實踐功能的 python 以外，也同時具備了很多它的測試程式，可見得哈佛的團隊在開發這個系統的同時，有特別的注意到可測試性。
 
-> :sunglasses: 任何你寫的程式，超過 6 個月不去看它，當你再度開啟時，看起來都像是別人寫的。
-> Any code of your own that you haven't looked at for six or more months might as well have been written by someone else. (Eagleson's law)
+> 😎 任何你寫的程式，超過 6 個月不去看它，當你再度開啟時，看起來都像是別人寫的。
+>> Any code of your own that you haven't looked at for six or more months might as well have been written by someone else. (Eagleson's law)
 
+---
 
-:::danger
-> :smile: 傻瓜都能寫出電腦能理解的程式。優秀的工程師寫出的是人類能讀懂的程式。
-> Any fool can write code that a computer can understand. Good programmers write code that humans can understand. (Martin Fowler)
-:::
+> 😅 傻瓜都能寫出電腦能理解的程式。優秀的工程師寫出的是人類能讀懂的程式。
+>> Any fool can write code that a computer can understand. Good programmers write code that humans can understand. (Martin Fowler)
+
+---
 
 #### 六、可移植性 Portability
 
@@ -259,45 +240,14 @@ ISO 9126 將品質分為六大特性，如 Fig ISO ，每一個特性下又分�
     - 我們在 Blackboard 系統上開發了許多與學習相關的功能（例如點名），但這些系統是用 Blackboard 的 Building Block 框架來做的，是一個特有的框架。當我們移植到 Moodle 的系統後這些功能就不能用了。許多後期開發的模組是一般的 web 程式（建構在 .Net上），它就很容易的與新的 Moodle 整合。
     * Eclipse 這個開發工具平台採取的架構就是可以擴充的 plug in 架構，所以許多第三方的開發者可以自己開發許多套件來整合。EclEmma，一種測試包含度的外掛，就是其中一個例子。
 
-❓ 軟體會不會生鏽？
+💡❓ 軟體會不會生鏽？
 
-:::success
-:thinking_face: 出勤刷卡系統的移植
-雄太曾經為某研究機構開發針對專案人員的出勤刷卡系統，透過刷卡來確定其上下班是否正常，整個流程包含多個系統：
-  
-- 行政人員在 A 系統（以 client-server 架構開發）所做的中輸入參與人員的資料，包含她所參與的計畫; 
-- 專案主持人登入 B系統（web 架構）做一個人員確認;
-- 行政人於把專案人員資料匯入個刷卡機的主機系統
-- 專案參與人員每日做出勤刷卡的動作
-- 每月結算人員的出勤狀況，如果符合要求，就會把資料彙整到撥款系統。
+---
 
-> 大虎公司覺得這一套系統比他們現行的卡式打卡鐘系統好多了，希望能夠以低價的方式移植，是否可行？需要考慮什麼？
-:::
+### 1.3.2 ISO 9126 的度量
 
-要考慮的東西很多，特別是在可移植性、維護性方面，例如：
-  
-- 人事系統的資料結構是否一致？各研究機構一定有自己的人事資料，是否容易與刷卡系統容易整合？
-- 撥款系統的介接; 雙方的撥款系統結構是否相容。
-- 需要額外安裝 A 系統，包含可能需要的資料庫 driver。
-- B 系統是否容易整合到研究機構的資訊系統。
-
-#### 用 ISO 9126 談談某課程管理系統
-
-針對某大學的課程管理與學習系統，我們試著描述一下其品質：
-  
-- **Functionality:** (1) 完整的學習管理系統; (2) 和校務的資料（學生選課，老師授課的資料）可以整合; (3) 可以和 LDAP 認證系統整合。
-- **Reliability:** (1) 舊的學習系統平均每年的 downtime 是 3 days; 新系統是 5hours (2) 應用 VM 提供備援機制。(3) 透過 SAN（Storage Area Network）架構，提昇備份與備援機制。
-- **Usability:** (1) 移除不需要的訊息宣傳，畫面更乾淨俐落 (2) 建立「使用說明」的課程來提供操作說明與回答問題。
-- **Efficiency:** (1) 透過分散式系統架構來提升效能。
-- Maintainability- (1) Open source 提昇系統的可除錯性 (2) 避免修改 Moodle PHP 的程式碼，降低修改的敏感度，提昇系統的穩定度 (3) 所有的程式行為都有詳細的 log。
-- **Portability:** (1) 所有校務功能都獨立到 Apps 的獨立模組，透過 SSO 做整合，可取代性高。但也因此介面會比較醜 (2) Moodle 可安裝至 Window, Unix 系列的作業系統 (3) 各 AP 採用無硬碟系統，系統容易安裝 。
-
-
-### ISO 9126 的度量
-
-> 除了上帝，我只相信數字。
-> In God we trust. All others must bring data. 
-> ~by *W. Edwards Deming*
+> 📌 除了上帝，我只相信數字。
+>> In God we trust. All others must bring data. ~by *W. Edwards Deming*
 
 ISO 9126 除了定義有哪些品質項目以外，它還定義了這些品質項目的量化檢驗方法（metric）。有三個：
 
@@ -305,11 +255,11 @@ ISO 9126 除了定義有哪些品質項目以外，它還定義了這些品質�
 - **外部度量 external metric**。需要透過程式的執行才能度量。例如消耗多少記憶體，平均的回應時間等。
 - **使用品質度量 quality in use metric**。使用上的度量，通常與 usability 相關。
 
-<!-- See \ref{sec:9126_maintain} for 9126 Maintainability metrics -->
+---
 
 ## 1.4 品質控制與確保
 
-### 製造業的品質控管
+### 1.4.1 製造業的品質控管
 
 製造業如何控制品質呢？通常有兩種方法。(1)  透過機械化來控制品質。機器不會對於重複的工作感到繁瑣，無聊，也因此叫不會犯錯。然而在生產的過程避免不了人工。(2)  如果機器無法代勞，需要人工的，就讓每個人做單一重複不會犯錯的工作。所以我們看到生產線上總是那麼多人的作業人員單調的、反覆的做同一件事，就是為了避免犯錯。
 
@@ -322,8 +272,9 @@ ISO 9126 除了定義有哪些品質項目以外，它還定義了這些品質�
 
 以「簡單化」來說，*軟體和製造業不同不一樣，我們無法讓第一個人寫第一行，第二個人寫第二行*。所以品質確保得用其他的方式。
 
+---
 
-### 軟體品質控制與確保
+### 1.4.2軟體品質控制與確保
 
 ![](https://hackmd.io/_uploads/BJYnNoBR2.png)
 
@@ -335,30 +286,38 @@ ISO 9126 除了定義有哪些品質項目以外，它還定義了這些品質�
 
 為了確保品質的優良所進行的所有活動，都可視為 SQA 的活動。
 
-> :point_right: **Software Quality Assurance:**
-> Software quality assurance (SQA) is a process that ensures that developed software meets and complies with defined or standardized quality specifications. SQA is an ongoing process within the software development life cycle (SDLC) that routinely checks the developed software to ensure it meets desired quality measures.
+> ✅ **軟體品質保證 (SQA)** 是一個確保開發的軟體符合既定或標準化的品質規格的過程。 SQA 是軟體開發生命週期 (SDLC) 中的一個持續過程，它會定期檢查已開發的軟體，以確保其符合所需的品質指標。
+>> *Software quality assurance (SQA)* is a process that ensures that developed software meets and complies with defined or standardized quality specifications. SQA is an ongoing process within the software development life cycle (SDLC) that routinely checks the developed software to ensure it meets desired quality measures.
 
-SQA 通常被翻譯成「軟體品質保證」，或「品保」，但這樣的翻譯會有些誤解，以為經過 SQA 就能「保證」系統完全沒有問題-- 事實上這是不可能的，僅能說是降低出錯的風險。*本講義中翻譯為「軟體品質確保」}。
+SQA 通常被翻譯成「軟體品質保證」，或「品保」，但這樣的翻譯會有些誤解，以為經過 SQA 就能「保證」系統完全沒有問題-- 事實上這是不可能的，僅能說是降低出錯的風險。*本講義中翻譯為「軟體品質確保」。
+
+---
 
 #### 品質控制 vs. 品質確保
 
 更細部的說，我們會區分品質控制（quality control; QC）與品質確保（quality assuracne; QA）。QC 會在製造開發的各個不同的階段衡量元件， 確保該元件在可接受的範圍內，也就是說，符合所規範的規格。QA 則稽核流程以確保製造流程符合所建立的指引與標準。也就是說，QC 著重在過程中產物稽核，QA 著重在過程是否符合規範或標準。
 
-> ==Quality Control (QC)== would measure the *components, at various manufacturing stages. QC would make sure the components were within acceptable 'tolerances', i.e. they did not vary from agreed specifications. 
+> ✅ **品質控制 (QC)** 會在各個製造階段對組件進行測量。 QC 會確保組件在可接受的「公差」範圍內，即它們不會偏離約定的規格。
+>> **Quality Control (QC)** would measure the *components, at various manufacturing stages. QC would make sure the components were within acceptable 'tolerances', i.e. they did not vary from agreed specifications. 
  
-> ==Quality Assurance (QA)== would not take any part in the manufacture process itself (including Quality Control of the product) but would audit the *process} to make sure the established guidelines and standards were being followed. The QA group would then give input (metrics or measures) into a process of continuous improvement. 
+> ✅ **品質保證**不會參與生產過程本身（包括產品的品質控制），但會審核整個流程，以確保遵循既定的準則和標準。然後，品質保證小組會為持續改善流程提供意見（指標或測量方法）。 
+>> **Quality Assurance** would not take any part in the manufacture process itself (including Quality Control of the product) but would audit the *process} to make sure the established guidelines and standards were being followed. The QA group would then give input (metrics or measures) into a process of continuous improvement. 
 
- 
+---
+
 > 😢 如果建築工人像工程師寫軟體那樣蓋房子，那第一隻飛來的啄木鳥就能毀掉人類文明。
-> If builders built buildings the way programmers wrote programs, then the first woodpecker that came along wound destroy civilization. (Gerald Weinberg)
+>> If builders built buildings the way programmers wrote programs, then the first woodpecker that came along wound destroy civilization. (Gerald Weinberg)
 
-建立品質文化，文化是每個習以為常，不需要制度去規範就會去做的事。
+---
 
-### 軟體品質成本
+> 👍 建立品質文化，文化是每個人都習以為常，不需要制度去規範就會去做的事。
+
+---
+
+### 1.4.3 軟體品質成本
 
 錯誤百出產品上線後，會招致很多「代價」，例如重新設計，賠款，聘任更多客服人員等。這個代價就是「品質成本」。我們可以降低品質成本-- 如果能夠早一點發現品質問題並且提前解決的話。
 
-  
 - **預防成本 Prevention costs**。預防產生錯誤的成本。就像是為了避免生病，買了一些保健品或運動所帶來的成本。Prevent defect goes inside your system. Approach: training, quality planning, formal technical reviews
 - **檢驗成本 Appraisal costs**。在產品上線前檢驗是否有錯誤的成本。Find the defect before you release it; testing and fix them
 - **失效成本 Failure costs**。產品在上線後，因為失效所帶來的成本。Rework, repair, failure mode analysis, product return and replacement, help line support
@@ -367,22 +326,47 @@ SQA 通常被翻譯成「軟體品質保證」，或「品保」，但這樣的�
 
 > 👍 預防重於治療，在軟體工程也適用。
 
-
-各工具的介紹將會分散在不同的章節中。
-
-#### 參考書籍
-
-- :book: Jorgensen, Paul C. Software testing: a craftsman’s approach. CRC press, 2013. 
-- :book: Patton, Ron. Software testing. Vol. 2. Indianapolis: Sams, 2001. 
-- :book: Kaner, Cem, James Bach, and Bret Pettichord. Lessons learned in software testing. John Wiley \& Sons, 2008.
+---
 
 ## 📖 1.5 案例
 
-### 瑞穗證券的烏龍指
+### 1.5.1 出勤刷卡系統的移植 🎫
 
-![image](https://hackmd.io/_uploads/HJJuIb1olg.png)
+雄太曾經為某研究機構開發針對專案人員的出勤刷卡系統，透過刷卡來確定其上下班是否正常，整個流程包含多個系統：
+  
+- 行政人員在 A 系統（以 client-server 架構開發）所做的中輸入參與人員的資料，包含她所參與的計畫; 
+- 專案主持人登入 B系統（web 架構）做一個人員確認;
+- 行政人於把專案人員資料匯入個刷卡機的主機系統
+- 專案參與人員每日做出勤刷卡的動作
+- 每月結算人員的出勤狀況，如果符合要求，就會把資料彙整到撥款系統。
 
-[Story](https://g.co/gemini/share/022dd19085b9)
+> 💡💬 大虎公司覺得這一套系統比他們現行的卡式打卡鐘系統好多了，希望能夠以低價的方式移植，是否可行？需要考慮什麼？
+
+要考慮的東西很多，特別是在可移植性、維護性方面，例如：
+  
+- 人事系統的資料結構是否一致？各研究機構一定有自己的人事資料，是否容易與刷卡系統容易整合？
+- 撥款系統的介接; 雙方的撥款系統結構是否相容。
+- 需要額外安裝 A 系統，包含可能需要的資料庫 driver。
+- B 系統是否容易整合到研究機構的資訊系統。
+
+---
+
+### 1.5.2 用 ISO 9126 談談某課程管理系統 🏫
+
+針對某大學的課程管理與學習系統，我們試著用 ISO 9126 描述一下其品質：
+  
+- **Functionality:** (1) 完整的學習管理系統; (2) 和校務的資料（學生選課，老師授課的資料）可以整合; (3) 可以和 LDAP 認證系統整合。
+- **Reliability:** (1) 舊的學習系統平均每年的 downtime 是 3 days; 新系統是 5hours (2) 應用 VM 提供備援機制。(3) 透過 SAN（Storage Area Network）架構，提昇備份與備援機制。
+- **Usability:** (1) 移除不需要的訊息宣傳，畫面更乾淨俐落 (2) 建立「使用說明」的課程來提供操作說明與回答問題。
+- **Efficiency:** (1) 透過分散式系統架構來提升效能。
+- Maintainability- (1) Open source 提昇系統的可除錯性 (2) 避免修改 Moodle PHP 的程式碼，降低修改的敏感度，提昇系統的穩定度 (3) 所有的程式行為都有詳細的 log。
+- **Portability:** (1) 所有校務功能都獨立到 Apps 的獨立模組，透過 SSO 做整合，可取代性高。但也因此介面會比較醜 (2) Moodle 可安裝至 Window, Unix 系列的作業系統 (3) 各 AP 採用無硬碟系統，系統容易安裝 。
+
+---
+
+### 1.5.3 瑞穗證券的烏龍指 📈
+
+<a href="https://g.co/gemini/share/022dd19085b9"><img src = "https://hackmd.io/_uploads/HJJuIb1olg.png" width=200></a>
 
 2015 年 9 月 3 日，一個長達 10 年的訴訟終於畫下了句號。這個判例將對 IT 行業產生深遠的影響：如果程式的 bug 導致了巨大的經濟損失，應該由誰來承擔？用戶？運營商？還是系統開發商？(本文取自 [程序bug導致了天大的損失，要槍斃程序猿嗎？](https://kb.cnblogs.com/page/541805/))
 
@@ -390,70 +374,25 @@ SQA 通常被翻譯成「軟體品質保證」，或「品保」，但這樣的�
 * 瑞穗：系統使用單位
 * 富士通：系統開發單位
 
-（一）瑞穗 田中君 的烏龍指
+以下是故事的精簡版本：
 
-如果時光能夠倒流，讓瑞穗證券的交易員田中君(化名)穿越回 2005 年 12 月 8 日東證開盤前的那幾分鐘，田中君會不會選擇把自己那根烏龍指給掰斷呢？烏龍指(fat finger)：是指股票交易員、操盤手、股民在交易的時候，不小心敲錯了價格、數量、買賣方向等。正是由於田中君的一次錯誤輸入，讓他所在的瑞穗證券遭受了超過 400 億日元的天價損失。
+2005 年 12 月 8 日，日本 J-Com 公司首次上市。瑞穗證券交易員田中君（化名）在為客戶下單時，誤將「以 61 萬日元賣出 1 股」輸入成「以 1 日元賣出 61 萬股」。儘管交易軟件發出警告，田中君仍未細看便確認，導致這筆巨額賣單進入東京證券交易所（東證）的交易盤口。
 
-2005 年 12 月 8 日這天，是日本公司 J-Com 首次公開上市(IPO)的日子。上午9:27，距離開盤還有幾分鐘。田中君接到一位客戶的委托：“以 61 萬日元的價格，賣出 1 股 J-Com 的股票”。田中君接到委托後，在瑞穗證券的交易終端上，**錯誤地輸入了“以每股 1 日元的價格，賣出 61 萬股”**。
+錯誤發出後，田中君試圖撤單卻被東證系統拒絕，聯繫交易所也無濟於事。交易開始後，該賣單瞬間將 J-Com 股價推至異常高價，隨後又因被機構瘋搶而跌停。隨後，瑞穗證券被迫反向買入股票以填補賣單，將股價推至漲停，全天造成約 270 億日元的損失。
 
-指令發出後，瑞穗證券的交易軟件檢查到這是一個異常的交易訂單，給出了一個警告的對話框。可是，每天這種警告對話框見得太多了。田中君甚至都沒有好好讀一下對話框裡的內容，就按下了確定按鈕。於是，這個巨大的賣單就掛在了東證的交易盤口上。
+該事件不僅影響了 J-Com 股價，還引發了市場對券商潛在虧損的恐慌，導致多家券商股價下跌，日經指數也大幅下挫。
 
-2 分鐘後，田中君發現了這個錯誤，趕緊試圖通過交易軟件撤銷這筆賣單。**可是連續輸入 3 次撤單指令，都被東證的交易系統拒絕了**(後來查明是由於交易系統的 bug 所致)。
+**後續處理與訴訟**
 
-田中君又迅速給交易所的負責人打電話，要求將這個賣單撤下。交易所的人表示：“我們無權操作，這個問題只能你們自己想辦法”。
+由於 J-Com 總流通股數遠少於賣出數量，瑞穗證券最終通過現金結算，以烏龍指發生前的股價進行交割，使得總損失擴大至 400 億日元。當事人田中君並未受嚴厲懲罰，但其操作導致公司全年利潤歸零，員工年終獎泡湯。
 
-這時交易已經開始。這個巨大的賣單首先將開盤價定在了 67.2 萬日元，然後又依次將所有買單成交，最終將 J-Com 的股價釘死在跌停價 57.2 萬日元上。
+趁機獲利的 22 家機構受到譴責，部分公司捐款成立了保護投資者基金。東證交易所因系統 bug 導致無法及時撤單而受到質疑，其社長引咎辭職。
 
-此刻市場內一片大亂。散戶們被這個巨大空單嚇得驚慌失措，以為 J-Com 公司出了什麼問題，紛紛跟風拋售。而一些機構和大戶已經猜到是出了烏龍指，迅速在跌停價買進。一些有節操的機構，例如德意志證券，買了幾手後覺得實在是太不厚道，自覺停止了搶購。而大部分機構紛紛表示：節操才多少錢一斤，有便宜不占王八蛋啊！搶得不亦樂乎。
+瑞穗證券認為東證應對損失負責，但東證反駁稱是瑞穗自身操作失誤。雙方未能達成一致，瑞穗證券遂將東證及系統開發商富士通告上法庭。
 
-在股市這個游戲規則裡，只要你賣出的股票有人接了，那成交後就必須把貨交給買家才行。可是，J-Com 的股票一共才發行了 14,000 多股，大部分還由公司高管持有，真正在市場上流通的也就 3,000 多股。61 萬股，讓瑞穗上哪裡去弄？總不能自己在家裡畫啊！
+**法庭審判**
 
-沒有辦法，瑞穗證券只好發出了反向買入的決定，開始和其他人一起搶購籌碼。這樣一來，J-Com 的股價又被拉高到漲停價 77.2 萬日元，一直持續到當天的交易結束。在當天的交易中，瑞穗證券一共損失了約 270 億日元。
-
-受到影響的不僅僅是 J-Com 的股價。瑞穗證券直到當天收盤後，才向外界披露了這一烏龍指事件。而在當天的交易過程中，市場上已經有傳聞，一家證券公司搞出了烏龍指，將有重大虧損。由於不知道是哪家券商出了問題，所有券商股票都慘遭拋售。
-
-這下證券公司都哭了，紛紛發表聲明：股東老爺們，真的和我沒關系啊。其中最慘的是 J-Com 上市的主要發行商 -- 日興證券，股價一度狂跌了8%。而這股不安情緒也影響了所有投資者。當天收盤時，日經指數大跌了 301 點。
-
-（二）收場
-
-首先是成交單的交割問題。不存在的股票怎麼交割啊？雖然瑞穗證券通過回購，搶回了大部分的賣單，但還是有 9 萬多股被其他機構和散戶買走了。根據規則，瑞穗必須在 3 天之內交貨(日本的交割日是T+3)。前面說過，市場上一共才流通了 3,000 多股 J-Com 的股票，這 9 萬多股真是逼死瑞穗證券也拿不出來啊。
-
-最後經過協商，買賣雙方同意用現金來結算。清算的價格定在了每股 91 萬日元——這是瑞穗證券敲下烏龍指前一刻的股票價格。這次現金交割又讓瑞穗證券雪上加霜，損失擴大到 400 多億。
-
-至於當事人田中君，似乎並沒有受到太嚴厲的懲罰。瑞穗證券至今也沒有公布當事人的真實姓名，只知道是一名男性證券經紀人。事件發生時，正趕上日本公司要發年終獎。就因為田中君的一個錯誤操作，一下子把公司一整年的利潤都給干掉了，讓瑞穗證券所有員工的年終獎都泡了湯。
-
-那些趁火打劫的機構大戶也受到了指責。事後查明，共有 22 家機構在此次烏龍指事件中獲利。其中瑞士銀行，摩根斯坦利，日興證券，雷曼兄弟，瑞士信貸，野村證券這六家機構，從這次事件中一共瓜分了 168 億，占瑞穗證券損失的 40% 還多。
-
-盡管這錢來的不太光彩，可畢竟是按照市場規則賺來的，所以金融監管部門只能從道德層面對這些公司進行譴責而已。有人提議，讓這些公司把賺到的錢吐出來。這些公司表示：這樣做，等於把公司的利潤白白送給別人，沒法向自己的股東交代啊。後來在各方的調節下，一部分獲利的證券公司同意把錢拿出來，成立一個保護投資者利益的基金。
-
-在這次事件中，「東證交易所」受到了最多的質疑。首先瑞穗證券在意識到錯誤掛單後，**曾經多次發出取消的指令，但都被交易所的系統所拒絕，這顯然不符合系統的交易規則**。其次，在瑞穗證券與東證負責人取得了聯繫的情況下，東證方面仍然放任這筆賣單繼續執行，有監管不力之嫌。事後，東證社長鶴島琢夫引咎辭職。
-
-瑞穗證券方面認為，正是由於東證的過錯，才讓自己蒙受了 400 億日元的損失。這個錯誤理應由東證來買單。東證的觀點是：**你自己烏龍指敲錯了指令，憑啥賴在我身上**？對此，瑞穗證券回擊：**取消交易指令發出之前的那段時間，產生的損失自己認了。但是還沒成交的賣單為啥不讓人家撤銷**？
-
-兩個公司之間扯來扯去，也沒把這個問題談攏。於是，2006 年 9 月，瑞穗一紙訴狀，把東證以及交易系統的開發商 -- *富士通*告上法庭。就這樣，漫長的訴訟開始了。
-
-（三）法庭訴訟
-
-對於這個案件，事實已經很清楚了：由於交易所的系統 bug，在特定的條件下，會發生不能撤單的現象。經過詳查得知，**這個 bug 是富士通的技術人員在 2000 年某次程式修改時，不小心埋進去的**。
-
-本來，程序修改後必須經過嚴格的**回歸測試**，來驗證對其他業務流程有沒有影響。可是**不僅富士通忽略了這個測試**，**東京證券交易所在系統驗收測試 (UAT)的時候，也疏忽了這方面的內容**。結果，炸彈在這個時間點被引爆了。
-
-東證和富士通，應該為瑞穗證券的損失負責嗎？
-
-起初，東證還想耍賴，把錯誤全部推在富士通身上。東證主張：就算是交易系統的 bug 導致了瑞穗證券的損失，那也是富士通的錯。因為我的系統需求裡面，是明確規定了可以撤單的。富士通開發的程序沒有符合我的需求，才導致了這樣的結果。
-
-對於東證的這個主張，東京地方法院判定：**這個系統的主要責任人是東證**。富士通只是東證的系統供應商，屬於連帶責任人。無論是主要責任人還是連帶責任人，如果被證明犯有重大過失，都應該做出賠償。
-
-> 那麼，程式的 bug 算是“重大過失”嗎？這很難說。一個系統裡有沒有隱藏的 bug，是沒法從理論上證明的。就算是測試再徹底，也會有測不到的 bug 流出來。所以在法律上，通常不會把所有因為 bug 導致的損失都歸罪給程序開發商。**否則的話，世界上最大的 bug 生產商 -- 微軟，早就賠得連內褲都不剩了**。
-
-這就帶出了本案第二個爭論焦點：*什麼樣的 bug 才算是“重大過失”*？法院給出了判斷的標準 -- *這個 bug 是不是很容易被發現*。
-
-於是，控辯雙方都找來了由軟體工程和系統分析師，在法庭上吵成一團。
-
-- 穗瑞：這個 bug 簡直太明顯了好麼？連這個都測不出來，請問貴司人員的軟體工程師，都是音樂老師教的嗎？
-- 富士通：反對！這麼復雜的條件組合，你能一下子就找出 bug 來啊！你們別吹牛了行不行！
-
-雙方吵來吵去，誰也說服不了誰，乾脆，在法官面前開始 review 起程序程式碼來了。
+訴訟查明，東證交易系統的 bug 是富士通在 2000 年的一次程式修改中無意植入的，且富士通和東證在程式測試環節均有疏忽。東京地方法院最終判定東證承擔主要責任，富士通為連帶責任人。法院認為，程式 bug 是否構成「重大過失」取決於其是否容易被發現，而非單純的系統錯誤。最終，控辯雙方在法庭上圍繞 bug 的顯著性展開激烈爭論。
 
 最終，東京地方法院判定：... 
 
@@ -464,15 +403,16 @@ SQA 通常被翻譯成「軟體品質保證」，或「品保」，但這樣的�
 
 ❓ 身為軟體工程師的你，受到什麼啟示？
 
+---
+
 ## ✍️ 1.6 練習
 
-### 軟體危機
-
+#### 軟體危機
 
 - 除了講義內容以外，從過去的國內外新聞裡找出2-3 個軟體品質問題的災害，描述其品質所造成的影響，造成的原因，可能的避免方法？
 - 「YouBike 微笑單車」公共自行車租賃系統於 2016 年 8 月 31 日凌晨 1 時停車柱當機，導致全國 2 萬 2,000 輛公共自行車停止使用，該系統在 9 月 2 日凌晨修復完畢，但造成許多民眾通勤受阻。請描述此一事件之原因。
 
-### 軟體品質
+#### 軟體品質
 
 - 以下何者正確？	
 	- 廣義的說，所謂的軟體包含程式碼、操作的程序、各式的說明文件、與需要執行該程式的資料。
@@ -482,7 +422,7 @@ SQA 通常被翻譯成「軟體品質保證」，或「品保」，但這樣的�
 - 想想看，你周遭的生活中，哪些東西是你認為「品質好」的物品？試著以 `David Garvin 的品質模型` 來描述之。
 
 
-### 品質模型 
+#### 品質模型 
 
 - ISO 9126 的品質度量有三種：內部、外部、使用。以下分別是屬於何種？	
 	- 模組耦合率 0.38
@@ -506,13 +446,13 @@ SQA 通常被翻譯成「軟體品質保證」，或「品保」，但這樣的�
 -  找一個你使用過軟體（最好是 Server 等級），從 ISO 9126 的品質角度討論其優劣。
 -  選擇兩個功能類似的軟體（例如開發專用的編輯器），從 ISO9126 的六個層面來評估品質。每一個層面應該僅可能提供量化的數據來說明其品質。
 
-### 品質控制與保證
+#### 品質控制與保證
 
 - 以下哪些活動算是品質確保活動？(1) 系統測試 (2) 規格書審查 (3) 效能測試 (4) 合約簽訂 (5) 系統開發 (6) 開發流程稽核。
 -  何謂品質成本 (quality cost)？可以分為哪三類？
 - 軟體測試 (software testing) 與軟體品質保證 (software quality assurance) 有何不同？
 
-### 綜合
+#### 綜合
 
 - 以下何者正確？
 	- [ ] 品質控制著重物品是否符合品質或規範，品質確保著重是否符合流程規範。
@@ -526,29 +466,39 @@ SQA 通常被翻譯成「軟體品質保證」，或「品保」，但這樣的�
 	- 積分高到一定程度（v）後，並且批改的份數到達一定門檻 (n) 後，該學生可以成為合格的同儕審查者 
 	- 成為審查者後，必須批改一定量 (k) 的學生作答才可以看到自己的成績。
 	
-
 問題：該如何測試此系統？可能會遇到什麼困難？如何解決？
 
+---
+
+## 參考書籍
+
+- Jorgensen, Paul C. Software testing: a craftsman’s approach. CRC press, 2013. 
+- Patton, Ron. Software testing. Vol. 2. Indianapolis: Sams, 2001. 
+- Kaner, Cem, James Bach, and Bret Pettichord. Lessons learned in software testing. John Wiley \& Sons, 2008.
+
+<!-- 
 ### 參考答案
 
-Exercise ISO9126
-* 以下問題或作法分別與哪個 ISO 9126 特性相關？
-* (1) 需求規格變了，軟體就需要大幅的修改，造成很大的人力損失。
-    * :point_right: Maintainability.changeability
-* (2) 經過了教育訓練，使用者還是不太會操作該軟體。
-    * :point_right: Usability.learnability 
-* (3) 所開發的系統可以透過 LDAP和別人的帳號認證系統整合。
-    * :point_right:Functionality.interoperability, Portability。Interoperability 好通常 portability 也會好。 
-* (4) 所開發的系統提供 API 方便其他系統呼叫。
-    * :point_right: Functionality.interoperability, Portability
-* (5) 開發系統時做適當的 logging，記錄適當的系統資訊。
-    * :point_right: Maintability.analyzability 
-* (6) 每個畫面提供 help 的按鈕，提供操作的介紹。
-    * :point_right: Usability 
-* (7) 預防錯誤資料所成的系統崩潰。 
-    * :point_right: Reliability 
-* (8) 系統每天晚上都重新開機才會正常。
-    * :point_right: Reliability
+#### Exercise ISO9126
 
-Exercise "成績匯入"
-* 應該考慮 (1) 匯入的資料檔案格式，excel? 哪一版本？.txt? XML? JSON 格式？ (2) 會不會有沒有成績的情況？在原檔案是如何註記？-? X?  (3) 會不會很多科目？以哪一個科目為排序依據？需不需要設定第一排序科目，第二排序科目等？該如何設定？ (4) 如果同分該如何排序？用學號？原資料有學號嗎？ (4) 成績是否用 A, B, C, E 的標記方式？哪一個算高分？(5) 資料會不會很大？超過一萬筆？有沒有效能上的考量？
+以下問題或作法分別與哪個 ISO 9126 特性相關？
+* (1) 需求規格變了，軟體就需要大幅的修改，造成很大的人力損失。 🔑 Maintainability.changeability  
+* (2) 經過了教育訓練，使用者還是不太會操作該軟體。🔑 Usability.learnability  
+* (3) 所開發的系統可以透過 LDAP和別人的帳號認證系統整合。🔑 Functionality.interoperability,  Portability。Interoperability 好通常 portability 也會好。  
+* (4) 所開發的系統提供 API 方便其他系統呼叫。 🔑 Functionality.interoperability, Portability 
+* (5) 開發系統時做適當的 logging，記錄適當的系統資訊。  🔑 Maintability.analyzability  
+* (6) 每個畫面提供 help 的按鈕，提供操作的介紹。 🔑 Usability  
+* (7) 預防錯誤資料所成的系統崩潰。  🔑 Reliability 
+* (8) 系統每天晚上都重新開機才會正常。🔑 Reliability  
+
+#### Exercise "成績匯入"
+
+🔑 應該考慮 
+1. 匯入的資料檔案格式，excel? 哪一版本？.txt? XML? JSON 格式？ 
+2. 會不會有沒有成績的情況？在原檔案是如何註記？  
+3. 會不會很多科目？以哪一個科目為排序依據？需不需要設定第一排序科目，第二排序科目等？該如何設定？ 
+4. 如果同分該如何排序？用學號？原資料有學號嗎？
+5. 成績是否用 A, B, C, E 的標記方式？哪一個算高分？
+6. 資料會不會很大？超過一萬筆？有沒有效能上的考量？
+
+-->

@@ -388,7 +388,7 @@ Good code is its own best documentation. As you're about to add a comment, ask y
 ---
 
 
-## 練習
+## ✍️ 練習
 
 #### 軟體檢視
 - 關於軟體檢視（software inspection）以下何者為真？
