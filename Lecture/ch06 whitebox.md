@@ -10,11 +10,8 @@ Ch06 白箱測試
 A method of testing software that tests internal structures or workings of an application, as opposed to its functionality (i.e. black-box testing)}
 :::
 
-## 🧑‍💻Lab涵蓋度 
 
-[涵蓋度 Lab](https://github.com/nlhsueh/sw-testing24/blob/main/lab/u04_utest/whitebox_test.md)
-
-## 測試涵蓋度
+## 6.1 測試涵蓋度
 
 ```java=
 input A,B,X 
@@ -71,10 +68,10 @@ A,B,X若為(3,0,3)和(3,1,1)能使得 (A>1) AND (B=0)和(A=2) OR (X>1)這兩個�
 
 感覺起來很像是，但並非如此，例如此例：
 
-|     | p    | q    | p & q  |
-|-----|------|------|--------|
-| t1  | True | False| False  |
-| t2  | False| True | False  |
+|     | p     | q     | p & q |
+| --- | ----- | ----- | ----- |
+| t1  | True  | False | False |
+| t2  | False | True  | False |
 
 上表中的 測試案例 t1, t2 雖然可以是條件 p, q, 都有 true, false, 但 p\&q 這個分支的值卻都是 false 的。
 
@@ -84,18 +81,18 @@ A,B,X若為(3,0,3)和(3,1,1)能使得 (A>1) AND (B=0)和(A=2) OR (X>1)這兩個�
 
 上面的例子，當 p 為 False, q 並不會進行求值，稱之為「快捷求值」。
 
-|     | p    | q    | p & q  |
-|-----|------|------|--------|
-| t1  | True | False| False  |
-| t2  | False| **x** | False  |
+|     | p     | q     | p & q |
+| --- | ----- | ----- | ----- |
+| t1  | True  | False | False |
+| t2  | False | **x** | False |
 
 因此，為了滿足 q 為 True，必須增加一個測試案例：
 
-|     | p    | q    | p & q  |
-|-----|------|------|--------|
-| t1  | True | False| False  |
-| t2  | False| x    | False  |
-| t3  | True | **True** | **True**   |
+|     | p     | q        | p & q    |
+| --- | ----- | -------- | -------- |
+| t1  | True  | False    | False    |
+| t2  | False | x        | False    |
+| t3  | True  | **True** | **True** |
 
 因此，(t1, t2, t3) 可以滿足條件涵蓋度與分支涵蓋度百分百。
 
@@ -132,19 +129,19 @@ print X
 
 要完成 CC100 卻不 BC100，表示在複合條件上需要做處理，也就是 02 行的條件判斷。假設所有的條件分別是 c1, c2, c3, c4。我們讓這五個條件的 True False 都經歷過，但 b1 (c1\&\&c2) 只有經歷 True, False 其中一個，唯一可行的是 b1 只經過 False。因此測試案例如下：
 
-|  X  |  Y  |  c1 |  c2 |  b1 |  c3 |  c4 |
-|----|----|----|----|----|----|----|
-|  9  |  1  |  F  |  T  | *F*  |  F  |  F  |
-| 12 | 11 |  T  |  F  | *F*  |  T  |  T  |
+| X   | Y   | c1  | c2  | b1  | c3  | c4  |
+| --- | --- | --- | --- | --- | --- | --- |
+| 9   | 1   | F   | T   | *F* | F   | F   |
+| 12  | 11  | T   | F   | *F* | T   | T   |
 
 
 要完成 BC 卻不 CC，表示 b1 必須經歷 T/F，但 c1 或 c2 其中之一只經歷 T/F 其中一個。因此測試案例如下。其中 c1 只經歷 T, 而 b1 經歷 T/F。
 
-|  X  |  Y  |  c1 |  c2 |  b1 |  c3 |  c4 |
-|----|----|----|----|----|----|----|
-| 13 |  1 | *T*  |  T  |  T  |  -  |  F  |
-| 12 | 11 | *T*  |  F  | *F*  |  T  |  T  |
-| 12 |  2 | *T*  |  F  | *T*  |  F  |  F  |
+| X   | Y   | c1  | c2  | b1  | c3  | c4  |
+| --- | --- | --- | --- | --- | --- | --- |
+| 13  | 1   | *T* | T   | T   | -   | F   |
+| 12  | 11  | *T* | F   | *F* | T   | T   |
+| 12  | 2   | *T* | F   | *T* | F   | F   |
 
 
 
@@ -204,8 +201,12 @@ print Y
 
 統整了本節所講的涵蓋度的關係。最上方（路徑涵蓋度）是最嚴謹的，依序往下。分支涵蓋度與條件涵蓋度沒有絕對的關係，因此平行。分支涵蓋度百分百時，敘述涵蓋度也為百分百。值得一提的是，條件涵蓋度百分百時並不保證敘述涵蓋度為百分百。
 
+## 🧑‍💻 6.2 Lab涵蓋度 
 
-## 基本路徑測試
+[涵蓋度 Lab](https://github.com/nlhsueh/sw-testing24/blob/main/lab/u04_utest/whitebox_test.md)
+
+
+## 6.3 基本路徑測試
 
 
 基本路徑測試（basis path testing） 白箱測試常見的方法，用以達成百分百敘述涵蓋度與分支涵蓋度。
@@ -307,9 +308,7 @@ Path6: 1-2-3-4-5-6-7-8-2-…
 程式的 Cyclomatic Complexity 為 `n+1`; 亦即表示可以設計至多 `n+1` 個測試資料，使得條件涵蓋度 100%。 
 :::
     
-## 資料流測試
-
-
+## 6.4 資料流測試
 
 資料流測試（data flow testing）著眼在變數的定義與使用測試。從資料流的角度檢視程式是否異常的角度來進行測試案例的設計。從一個變數被定義到被使用的路徑應該測試，*開始有了「路徑」的概念*。
 
@@ -320,15 +319,15 @@ Path6: 1-2-3-4-5-6-7-8-2-…
 
 當變數出現在一個 assignment 敘述的右方，例如 m = x + 1; 對變數 x 而言此敘述為其 c-used，因為它被拿來計算利用了。若變數出現在一個判斷中，例如 x==2，則是其 p-used。
 
-|               | Def | C-use       | P-use    |
-|---------------|-----|-------------|----------|
-| 1.  read (x, y); | x, y|             |          |
-| 2.  z = x+2;   | z   | x           |          |
-| 3.  if (z<y)   |     |             | z, y     |
-| 4.  &nbsp; &nbsp; w = x + 1; | w   | x           |          |
-| 5.  else       |     |             |          |
-| 6.  &nbsp; &nbsp; y = y + 1; | y   | y           | 
-| 7.  print (x, y, w, z); |     | x, y, z, w |          |
+|                              | Def  | C-use      | P-use |
+| ---------------------------- | ---- | ---------- | ----- |
+| 1.  read (x, y);             | x, y |            |       |
+| 2.  z = x+2;                 | z    | x          |       |
+| 3.  if (z<y)                 |      |            | z, y  |
+| 4.  &nbsp; &nbsp; w = x + 1; | w    | x          |       |
+| 5.  else                     |      |            |       |
+| 6.  &nbsp; &nbsp; y = y + 1; | y    | y          |
+| 7.  print (x, y, w, z);      |      | x, y, z, w |       |
 
 
 - *全定義 (all def) 資料流測試*：對於所有的變數的定義，都應該有一個路徑從定義到使用（p-use 或 c-use）走過。 
@@ -402,7 +401,7 @@ print x
 
 當 (p,q) = (t,t), (f,f)  branch coverage 已經 100%，但 x 的 du path 並沒有通過(3, 9)。
 
-## 變異測試
+## 6.5 變異測試
 變異測試是一個很有趣的方法，它並不是真的測試程式碼或系統規格，而是測試「測試資料。當我們的測試資料太少或是不夠尖銳時，它是無法找出程式的錯誤的。
 
 ![mutation testing](https://hackmd.io/_uploads/H1ft65b4a.png)
