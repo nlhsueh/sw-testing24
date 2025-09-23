@@ -1,7 +1,3 @@
-
-
-
-
 # 預防性程設
 
 > 就像排骨牌一樣，我們會設許多斷點，預防錯誤的擴散。
@@ -60,9 +56,6 @@ assert (a>=0): "平方後不可能 < 0";
 > javac -ea Calculator.java
 
 其中 `ea` 表示 enable assertion。
-
-![](https://hackmd.io/_uploads/rJg4NE602.png)
-FIG: 在 intellij 上設定 -ea 
 
 > 為你的一段程式碼加上斷言，enable 斷言以查核其正確。待確定程式無誤後，disable 這些斷言
 
@@ -168,6 +161,33 @@ public void playGame() {
 
 
 總言而之，記得這個原則：(1) 開發階段，有斷言，就寫斷言 (2) 如果我們移除了斷言，系統邏輯還是要對的，還是能夠做適當的防呆偵錯。
+
+### Intellij
+
+1. Run > Configuration > Modify Option > VM > 加上 `-ea`
+![](https://hackmd.io/_uploads/rJg4NE602.png)
+在 intellij 上設定 -ea 
+
+2. Run Maven: 
+   1. `POM.xml` file
+   ```xml
+      <build>
+         <plugins>
+               <plugin>
+                  <groupId>org.codehaus.mojo</groupId>
+                  <artifactId>exec-maven-plugin</artifactId>
+                  <version>3.1.0</version> <!-- 建議使用較新的穩定版本 -->
+                  <configuration>
+                     <!-- 指定要執行的主類別 -->
+                     <mainClass>xdemo.Sin</mainClass>
+                     <!-- 啟用斷言 (Assertion) -->
+                     <enableAssertions>true</enableAssertions>
+                  </configuration>
+               </plugin>
+         </plugins>
+      </build>
+   ```
+   2. 在右方 Maven > Plugins > exec:exec:java 執行
 
 ### Lab
 

@@ -133,6 +133,8 @@ ISO 9126 將品質分為六大特性，如 Fig ISO ，每一個特性下又分�
 
 ![](https://hackmd.io/_uploads/r1YdmoB03.png)
 
+
+        
 👉 ISO: ISO 9126 軟體品質模型
 
 #### 一、功能性 Functionality
@@ -149,6 +151,17 @@ ISO 9126 將品質分為六大特性，如 Fig ISO ，每一個特性下又分�
     - 是否符合特定業界標準與規範或法律。例如我們產生的格式是否符合 JSON格式、是否符合 SCORM 標準等。
 - **安全性** Security 
     - 是否能夠阻擋非法的存取或控制。This subcharacteristic relates to unauthorized access to the software functions.
+
+
+```mermaid
+mindmap
+  root((Functionality))
+      )Suitability(
+      )Accurateness(
+      )Interoperability(
+      )Compliance(
+      )Security(
+```
 	
 > 🫣 我們有時間做多餘的功能，卻沒有時間把必要的功能做對。
 
@@ -167,6 +180,14 @@ ISO 9126 將品質分為六大特性，如 Fig ISO ，每一個特性下又分�
     - 當環境或其他元件出錯時，能夠持續保持一定的運行的能力，能容忍錯誤的能力。The ability of software to withstand (and recover) from component, or environmental, failure.
 - **回復性** Recoverability 
     - 當環境或其他元件出錯時，能夠回復到正常運行的能力。例如有些系統要一天後才能回復，有些系統指需要停機一小時。有一些系統一個星期才備份一次，所以系統回復時可能喪失一個星期的資料，就是回復性差。
+
+```mermaid
+mindmap
+  root((Reliability))
+      )Maturity(
+      )Fault tolerance(
+      )Recoverability(
+```
 
 ---
 
@@ -188,6 +209,16 @@ ISO 9126 將品質分為六大特性，如 Fig ISO ，每一個特性下又分�
 > 🫠 如今的程式是一場工程師和上帝的競賽，工程師要開發出更大更好、傻瓜都會用到軟體; 而上帝在努力創造出更大更傻的傻瓜。目前為止，上帝是贏的。
 >> Programming today is a race between software engineers striving to build bigger and better idiot-proof programs, and the universe trying to produce bigger and better idiots. So far, the universe is winning. (Rick Cook)
 
+
+```mermaid
+mindmap
+  root((Usability))
+      )Understandability(
+      )Learnability(
+      )Operability(
+      )Attractiveness(
+```
+
 ---
 
 #### 四、效能 Efficiency
@@ -203,6 +234,14 @@ ISO 9126 將品質分為六大特性，如 Fig ISO ，每一個特性下又分�
 
 > 💡 時間效能和資源效能常常會相互衝突，設計需要取捨-- 這也是為什麼品質沒有絕對，需要與使用者或設計師商討。
 
+
+```mermaid
+mindmap
+  root((Efficiency))
+      )Time Behaviour(
+      )Resource utilization(
+```
+
 ---
 
 #### 五、可維護性 Maintainability
@@ -217,6 +256,18 @@ ISO 9126 將品質分為六大特性，如 Fig ISO ，每一個特性下又分�
 - **可測試性 Testability** 當系統變動時需要花多少 effort 來做確認測試？
     - 系統的可測試性高不高？測試環境是否容易建立？虛擬模組容不容易建置？是否有相關的測試資料？
     - 自動化測試。edx 是一個多人線上學習 MOOCs 系統，它是用 python 開發的開源系統，裡面除了很多實踐功能的 python 以外，也同時具備了很多它的測試程式，可見得哈佛的團隊在開發這個系統的同時，有特別的注意到可測試性。
+
+           
+```mermaid
+mindmap
+  root((Maintainability))
+      )Analyzability(
+      )Changeability(
+      )Stability(
+      )Testability(
+```
+
+---
 
 > 😎 任何你寫的程式，超過 6 個月不去看它，當你再度開啟時，看起來都像是別人寫的。
 >> Any code of your own that you haven't looked at for six or more months might as well have been written by someone else. (Eagleson's law)
@@ -239,6 +290,17 @@ ISO 9126 將品質分為六大特性，如 Fig ISO ，每一個特性下又分�
 - **易置換性 Replaceability** 	容易抽換某元件的能力。Characterizes the plug and play aspect of software components, that is how easy is it to exchange a given software component within a specified environment. 
     - 我們在 Blackboard 系統上開發了許多與學習相關的功能（例如點名），但這些系統是用 Blackboard 的 Building Block 框架來做的，是一個特有的框架。當我們移植到 Moodle 的系統後這些功能就不能用了。許多後期開發的模組是一般的 web 程式（建構在 .Net上），它就很容易的與新的 Moodle 整合。
     * Eclipse 這個開發工具平台採取的架構就是可以擴充的 plug in 架構，所以許多第三方的開發者可以自己開發許多套件來整合。EclEmma，一種測試包含度的外掛，就是其中一個例子。
+
+```mermaid
+mindmap
+  root((Portability))
+      )Adaptability(
+      )Installability(
+      )Conformance(
+      )Replaceability(      
+```
+
+
 
 💡❓ 軟體會不會生鏽？
 
