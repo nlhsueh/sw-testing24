@@ -428,7 +428,9 @@ SQA 通常被翻譯成「軟體品質保證」，或「品保」，但這樣的�
 
 ### 1.5.3 瑞穗證券的烏龍指 📈
 
-<a href="https://g.co/gemini/share/022dd19085b9"><img src = "https://hackmd.io/_uploads/HJJuIb1olg.png" width=200></a>
+<a href="https://g.co/gemini/share/022dd19085b9"><img src = "https://hackmd.io/_uploads/HJJuIb1olg.png" width=200></a> 
+
+[Watch](a href="https://g.co/gemini/share/022dd19085b9)
 
 2015 年 9 月 3 日，一個長達 10 年的訴訟終於畫下了句號。這個判例將對 IT 行業產生深遠的影響：如果程式的 bug 導致了巨大的經濟損失，應該由誰來承擔？用戶？運營商？還是系統開發商？(本文取自 [程序bug導致了天大的損失，要槍斃程序猿嗎？](https://kb.cnblogs.com/page/541805/))
 
@@ -457,6 +459,8 @@ SQA 通常被翻譯成「軟體品質保證」，或「品保」，但這樣的�
 訴訟查明，東證交易系統的 bug 是富士通在 2000 年的一次程式修改中無意植入的，且富士通和東證在程式測試環節均有疏忽。東京地方法院最終判定東證承擔主要責任，富士通為連帶責任人。法院認為，程式 bug 是否構成「重大過失」取決於其是否容易被發現，而非單純的系統錯誤。最終，控辯雙方在法庭上圍繞 bug 的顯著性展開激烈爭論。
 
 最終，東京地方法院判定：... 
+
+> [Details](https://docs.google.com/document/d/1ydO9j3cNGpYu-7nJWBNmuVUhkKrhbfWq1KYRlv1BkfM/edit?usp=sharing)
 
 ❓ 上述案例，你覺得誰給負最大責任
 (1) 瑞穗：沒有他們的犯錯，根本不會有這個災難

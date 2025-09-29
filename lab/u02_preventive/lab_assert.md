@@ -169,25 +169,28 @@ public void playGame() {
 在 intellij 上設定 -ea 
 
 2. Run Maven: 
-   1. `POM.xml` file
-   ```xml
-      <build>
-         <plugins>
-               <plugin>
-                  <groupId>org.codehaus.mojo</groupId>
-                  <artifactId>exec-maven-plugin</artifactId>
-                  <version>3.1.0</version> <!-- 建議使用較新的穩定版本 -->
-                  <configuration>
-                     <!-- 指定要執行的主類別 -->
-                     <mainClass>xdemo.Sin</mainClass>
-                     <!-- 啟用斷言 (Assertion) -->
-                     <enableAssertions>true</enableAssertions>
-                  </configuration>
-               </plugin>
-         </plugins>
-      </build>
-   ```
-   2. 在右方 Maven > Plugins > exec:exec:java 執行
+   1. Settings > Build, Execution, Deployment > Runner > VM options 加上 `-ea`
+
+![](../img/maven_assert.png)
+
+   2. 在 POM 中加入一個 build 的設定：
+
+```xml
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.1</version> <configuration>
+                <mainClass>xdemo.Sin</mainClass>
+            </configuration>
+            </plugin>
+        </plugins>
+    </build>
+```    
+   3. 點選右方的 Maven > Plugins > exec > exec:java 來執行
+
+![](../img/maven_exec_java.png)
 
 ### Lab
 
