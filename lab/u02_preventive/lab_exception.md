@@ -79,7 +79,7 @@ try {
 ```
 
 ### 6. **try-with-resources**
-這是一個自動管理資源的結構，適用於實現了 `AutoCloseable` 介面的資源（如文件流）。當使用這個結構時，資源會在結束後自動關閉，無需在 `finally` 中手動釋放資源。
+這是一個自動管理資源的結構，適用於實現了 `AutoCloseable` 介面的資源（如文件流）。當使用這個結構時，資源會在結束後自動關閉，無需在 `finally` 中手動釋放資源。(`FileReader` 有實作 `AutoCloseable`)
 ```java
 try (FileReader reader = new FileReader("test.txt")) {
     // 讀取文件
@@ -276,6 +276,9 @@ public class ErrorExample {
     }
 }
 ```
+
+**🛑 注意：AssertionError 是一個不該發生的問題，所以不是一個 Exception**
+
 **🛑 注意：Error 通常不應該用 `try-catch` 捕獲！**
 
 ---
@@ -320,6 +323,84 @@ Throwable
 
 這樣的架構讓 Java 具有強大的異常處理能力，同時保持程式的健壯性。希望這個解釋能幫助你清楚理解 Java 例外的設計原則！💡🚀
 
+## Quiz
+
+### Quiz01: 以下程式是否有錯誤？
+```java
+import java.io.FileNotFoundException;
+
+public class ThrowKeywordDemo {
+    public void someMethod() {
+        throw new FileNotFoundException("檔案不存在");
+    }
+
+    public static void main(String[] args) {
+        ThrowKeywordDemo demo = new ThrowKeywordDemo();
+        demo.someMethod();
+    }
+}
+```
+
+### Quiz02: 說明以下程式執行的狀況
+
+```java
+public class RuntimeAndFinallyDemo {
+    public static void main(String[] args) {
+        int result = 0;
+        try {
+            int[] numbers = {10};
+            System.out.println("嘗試執行除法");
+            result = numbers[0] / 0; // 潛在錯誤
+            System.out.println("除法完成");
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("捕捉到：陣列索引越界");
+        } finally {
+            System.out.println("Finally 區塊執行");
+        }
+        System.out.println("Result: " + result);
+    }
+}
+```
+
+### Quiz03: 以下程式有何問題？該如何改善？
+
+```java
+public class MultiCatchDemo {
+    public static void main(String[] args) {
+        try {
+            String s = null;
+            s.length(); // 潛在錯誤
+            System.out.println("執行成功");
+        } catch (Exception e) {
+            System.out.println("捕捉到：Exception");
+        } catch (NullPointerException e) {
+            System.out.println("捕捉到：NullPointerException");
+        }
+    }
+}
+```
+
+### Quiz04: 以下程式會如何執行？
+
+```java
+public class FinallyReturnDemo {
+    public static int getValue() {
+        int x = 1;
+        try {
+            System.out.println("Try 開始");
+            return x;
+        } finally {
+            x = 2;
+            System.out.println("Finally 執行，x=" + x);
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println("返回值: " + getValue());
+    }
+}
+```
+
 ## Lab
 
 ### Lab01: People
@@ -330,43 +411,9 @@ Throwable
 * [參考程式碼](../../Intellij/DemoPreventive/src/main/java/xdemo/Triangle.java)
 * 當長度是負的！
 
-```java
-public class Triangle {
-
-    public static void main(String[] args) {
-        System.out.println(Triangle.checkTriangle(10, 23, 11));
-        System.out.println(Triangle.checkTriangle(1, 1, 1));
-        System.out.println(Triangle.checkTriangle(2, 2, 3));
-        System.out.println(Triangle.checkTriangle(3, 2, 2));
-        System.out.println(Triangle.checkTriangle(0, -1, -2));
-        System.exit(0);
-    }
-
-    public static String checkTriangle(int a, int b, int c) {
-        if (a <= 0 || b <= 0 || c <= 0) {
-            System.out.println("長度不可以是負的");
-        }
-        if (a + b > c && b + c > a && c + a > b) {
-            if (a == b)
-                if (b == c) {
-                    return "正三角形";
-                } else
-                    return "等腰三角形";
-            else if (b == c) {
-                return "等腰三角形";
-            }
-            return "三角形";
-        }
-        return "非三角形";
-    }
-}
-```
-
- ## Ex
-
- 這裡有兩個關於 **Java 例外處理（Exception Handling）** 的練習題，適合用於教學或學生練習：
-
 ---
+
+## Exercise
 
 ### Ex01: 處理除零異常
 **題目：**
