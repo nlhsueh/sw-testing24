@@ -98,62 +98,6 @@ Java 的例外處理機制提供了靈活性與可讀性，使得程式能夠在
 > 寫一個模組程式和做一件事一樣，一方面你要把事情做好，一方面你要知道如何界定工作範圍 -- 對於你不能處理的事，你得上承給他人處理。
 
 
-
-### People example
-
-```java
-class People {
-    String name;
-    float height, weight, bmi;
-    int birthYear;
-
-    public People(String name, int birthYear) {
-        this.name = name;
-        this.birthYear = birthYear;
-    }
-
-    // People 宣告可能會拋出例外
-    public People(String name, float height, float weight, int birthYear) throws Exception {
-        this.birthYear = birthYear;
-        this.name = name;
-        setHW(height, weight);
-    }
-
-    // setHW 也會拋出例外
-    public void setHW(float height, float weight) throws Exception {
-        if (height > 2.2) {
-            throw new Exception("invalid height");
-        }
-        this.height = height;
-        this.weight = weight;
-        this.bmi = weight / (height * height);
-    }
-
-    float getBMI() {
-        return bmi;
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        People nick = null;
-        try {
-            nick = new People("name", 1.7f, 60, 1990);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-        bmi = nick.getBMI();
-        System.out.println(bmi);
-
-        try {
-            nick.setHW(180, 90);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
-}
-```
-
 ## 自訂例外
 
 自定義例外類別在 Java 中非常簡單，你可以透過繼承 `Exception` 或 `RuntimeException` 類別來創建屬於你自己的例外類別。`TriangleException` 可以用來表示三角形相關的錯誤，例如當邊長不符合三角形不等式定理時拋出此例外。
@@ -178,8 +122,6 @@ public class TriangleException extends Exception {
     }
 }
 ```
-
-###
 
 ![](https://media.geeksforgeeks.org/wp-content/uploads/20241218154434430661/Exception-Handling-768.png)
 

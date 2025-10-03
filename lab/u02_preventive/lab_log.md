@@ -35,28 +35,6 @@ public class LoggingExample {
 - `FINE`, `FINER`, `FINEST`：更詳細的除錯日誌，常用於開發和除錯階段。
 
 
-2. 使用 Log4j 進行日誌記錄：
-
-```java
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-public class Log4jExample {
-    private static final Logger logger = LogManager.getLogger(Log4jExample.class);
-
-    public static void main(String[] args) {
-        logger.info("這是一條 INFO 級別的日誌");
-        logger.warn("這是一條 WARNING 級別的日誌");
-
-        try {
-            int result = 10 / 0;  // 製造一個錯誤
-        } catch (ArithmeticException e) {
-            logger.error("發生了計算異常", e);
-        }
-    }
-}
-```
-
 -----
 
 ### **2. Log4j 2（功能較強大）**
@@ -135,14 +113,22 @@ Log4j 2 啟動時會自動在 **Classpath** 中尋找名為 `log4j2.xml`、`log4
 
 **配置說明**
 
-1.  **`<Configuration status="WARN">`**：設定 Log4j 內部日誌的級別。`WARN` 表示只輸出 Log4j 框架本身的警告及錯誤訊息。
-2.  **`<Appenders>`**：定義日誌輸出的目的地。
+1.  `Appenders` 設定所有輸出，`Loggers` 設定所有對象，透過 `AppenderRef` 來設定不同 `Logger` 採用不同的 `Appender`。
+2.  **`<Configuration status="WARN">`**：設定 Log4j 內部日誌的級別。`WARN` 表示只輸出 Log4j 框架本身的警告及錯誤訊息。級別目的與用途:
+    * `TRACE`: 最詳細的日誌，用於追蹤程式碼的細微流程。
+    * `DEBUG`: 僅供開發人員調試，顯示變數狀態和流程細節。
+    * `INFO`: 重要的里程碑事件，例如應用程式啟動、請求開始/結束。
+    * `WARN`: 潛在的問題或非預期狀況，但應用程式可以從中恢復。
+    * `ERROR`: 執行期錯誤，通常是例外被捕捉，影響到部分功能。
+    * `FATAL`: 致命錯誤，導致應用程式無法繼續運作而必須關閉。
+3.  **`<Appenders>`**：定義日誌輸出的目的地。
       * `ConsoleAppender`: 輸出到控制台 (`SYSTEM_OUT`)。
       * `FileAppender`: 輸出到指定路徑的檔案 (`logs/app.log`)。
       * `PatternLayout`: 定義日誌的格式。例如 `%d` 是日期，`%-5level` 是日誌級別，`%msg%n` 是日誌內容與換行。
-3.  **`<Loggers>`**：定義日誌記錄器。
-      * **`<Root level="info">`**：這是預設的根紀錄器。將日誌級別設定為 `info`，表示 `info`、`warn`、`error`、`fatal` 級別的日誌都會被記錄。
-      * **`<AppenderRef ref="...">`**：將 Appenders 綁定到 Logger 上。
+4.  **`<Loggers>`**：定義日誌記錄器。
+    * `Logger` 這一行: 「針對所有 `com.yourpackage.dao` 套件下的程式碼，請確保記錄所有 `DEBUG` 級別或更高的日誌，並將它們輸出到`控制台`。請不要將這些日誌事件傳遞給 Root Logger 或任何其他父級紀錄器，以避免重複記錄。(`additivity="false"`)」
+    * **`<Root level="info">`**：這是預設的根紀錄器。將日誌級別設定為 `info`，表示 `info`、`warn`、`error`、`fatal` 級別的日誌都會被記錄。
+    * **`<AppenderRef ref="...">`**：將 Appenders 綁定到 Logger 上。
 
 #### **第三步：在程式碼中使用 Log4j**
 
