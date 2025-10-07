@@ -160,6 +160,8 @@ public class MyService {
 
 完成以上三個步驟後，執行您的 Maven 專案，Log4j 2 就會根據您的 `log4j2.xml` 配置文件開始記錄日誌了。
 
+See [Here](../../Intellij/DemoPreventive/src/main/java/demo/log4j/OrderProcessor.java) for more examples; [log4j.xml](../../Intellij/DemoPreventive/src/main/resources/log4j.xml) is the setting file.
+
 ---
 
 ### **使用日誌的好處**
