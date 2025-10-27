@@ -237,7 +237,7 @@ double div(x, y) throws Exception {
 
 ![V model](https://hackmd.io/_uploads/SyGoNt5lp.png)
 
-V 開發模型是一個結合系統開發與測試的模型，代表著不同階段的開發重點與測試重點。如 圖\ref{img_V_model}，系統開發包含：
+V 開發模型是一個結合系統開發與測試的模型，代表著不同階段的開發重點與測試重點。系統開發包含：
 
 
 - 需求分析（requirement analysis）產生 SRS（Software Requirement Specification; SRS）與系統測試計畫（System test plan）;
