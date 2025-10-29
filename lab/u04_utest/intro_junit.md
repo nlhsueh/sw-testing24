@@ -101,6 +101,10 @@ public class CalculatorTest {
 }
 ```
 
+使用了 JUnit 提供的方法 `assertEquals(5, result)` 來進行斷言。這個斷言的作用是比較實際的結果 `result` (執行 `add(2, 3)` 得到的值) 是否等於預期的結果 `5`。
+
+如果實際的結果 `result` 確實是 `5`，那麼這個 `testAddition` 測試就會通過（Pass）；如果結果不是 5，那麼測試就會失敗（Fail），並提示錯誤訊息，這表明 `Calculator` 類別的 `add` 方法可能有問題。
+
 ### Template code
 
 More tags in Junit
