@@ -347,17 +347,6 @@ Learn:
 * 例外測試
 * 執行超時測試
 
-### Lab: Triangle (非獨立邊界測試)
-
-三邊的長都接於 1-10 之間，寫一個程式判斷是何種三角形。
-* 應用獨立非強固的邊界測試方法來進行測試
-* 可先用 excel 規劃測試案例，再轉成 JUnit 進行測試
-  * min, min+, max, max-
-* 討論：
-  * 如果邊界寫錯了 (<=10, 寫成 <10); 測試案例是否可以找出來？
-  * 此問題是否適合採用「獨立非強固的邊界測試」方法測試？如果不合適，請說明
-    * Hint: 需要兩個邊界都出錯，才會顯示呈現錯誤嗎？
-
 ### Lab: People (誤差與狀態改變)
 
 My [xdemo/People](https://github.com/nlhsueh/sw-testing24/blob/main/Intellij/DemoJunit/src/main/java/xdemo/People.java) 封裝了姓名、身高、體重、BMI、還有父親的關係。這個程式可能有錯誤。
@@ -379,6 +368,17 @@ My [RobustBubbleSort](https://github.com/nlhsueh/sw-testing24/blob/main/Intellij
 Lab
 1. Please refactoring the code, make it easy to test
 2. Use assertArrayEquals() to test your sort
+
+### Lab: Triangle (非獨立邊界測試)
+
+三邊的長都接於 1-10 之間，寫一個程式判斷是何種三角形。
+* 應用獨立非強固的邊界測試方法來進行測試
+* 可先用 excel 規劃測試案例，再轉成 JUnit 進行測試
+  * min, min+, max, max-
+* 討論：
+  * 如果邊界寫錯了 (<=10, 寫成 <10); 測試案例是否可以找出來？
+  * 此問題是否適合採用「獨立非強固的邊界測試」方法測試？如果不合適，請說明
+    * Hint: 需要兩個邊界都出錯，才會顯示呈現錯誤嗎？
 
 ### Lab: Binary Search (等價分割)
 
@@ -421,11 +421,10 @@ See my [DisplayNameTest](https://github.com/nlhsueh/sw-testing24/blob/main/Intel
 
 See [JUnit doc- DisplayNameGeneratorDemo](https://junit.org/junit5/docs/current/user-guide/#writing-tests-display-name-generator)
 * DisplayNameGenerator 共有四種
-    * Standard: Matches the standard display name generation behavior in place since JUnit Jupiter 5.0 was released. (?)
-    * Simple: 以方法的名稱顯示，但會去掉參數與括號 (?)
-    * **ReplaceUnderscores**: 以空白取代底線
-    * **IndicativeSentences**: 可包含類別和測試方法的描述，並自訂兩者之間的連接。
-
+    * `Standard`: 預設的生成器。它會將 CamelCase (駝峰命名法) 轉換為以空格分隔的單詞，首字母大寫，並保留方法參數。如果沒有參數，還是會呈現括號。
+    * `Simple`: 以方法的名稱顯示，如果沒有參數，不會呈現括號
+    * `ReplaceUnderscores`: 專門處理使用底線 _ 分隔單詞的命名方式。它會將名稱中的所有底線 _ 替換為空格。
+    * `IndicativeSentences`: 為測試類別和方法生成完整的、有指示性的語句。對於巢狀類別 (Nested Classes) 特別有用，它可以將類別名稱組合成更具描述性的句子。
 
 ![](https://hackmd.io/_uploads/S1xiM7nZa.png)
 * `A_year_is_not_supported` 是採用去除底線的方式，直接將方法名稱作為顯示，其內的 testing method 也都會採用此方法。
@@ -730,6 +729,9 @@ public class AdditionTest {
     - 輕度肥胖 27 <= BMI ＜ 30 
     - 中度肥胖 30 <= BMI ＜ 35 
     - 重度肥胖 BMI >= 35 
+
 - 寫一個程式判斷三角形。輸入的參數是三邊的長，若不符合三角形定義（任兩邊和大於第三邊）則會拋出例外。否則回傳 "一般三角形"、"等腰三角形"、"正三角形"等。開發之前，請先建立 JUnit 測試案例，並使用 @Test(expected=...) 的方式來測試例外。
+
 - 針對一個排序程式設計測試案例 SortTest，每一次測試之前會先做一些初始化：從檔案中讀取資料，寫到陣列 data[]中，SortTest 中的 testSort() 再針對 data[] 中的資料做排序。請利用 @Before 來完成此工作。
+
 - 寫一個無窮迴圈的程式，並使用 junit 來測試。利用 timeout 的參數來跳出迴圈。
