@@ -106,16 +106,17 @@ if (tall > 180)
 | ...    | ... | ...       | ...       | ...  |
 | 19     | ... | ...       | ...       | ...  |
 
-FIG: 強固邊界測試
+強固邊界測試
 
-![](https://hackmd.io/_uploads/ryQskZtl6.png)
+![image](https://hackmd.io/_uploads/rye0RV3e-x.png)
+
 
 
 上述的三角形例子是一個比較單純的例子，每一個變數的合法範圍只有一個，有時候不同的範圍會有不同的輸出，所以就具備多個邊界值。
 
 #### SwimmingPool
 :::success
-:basketball: 以下是一個游泳池收費系統的規則：
+:basketball: 以下是逢甲游泳池收費系統的規則：
 * (1) 一般票價 200 
 * (2) 星期六日250元,除會員以外不打折 
 * (3) 12歲以下、60歲（含）以上打八折，限定 3-75 歲可入內游泳 
@@ -149,7 +150,8 @@ if (exam <= 60 && hw <= 60 ) //錯了
 
 FIG: 非獨立型強固邊界測試
 
-![](https://hackmd.io/_uploads/By0nJ-tlp.png)
+![image](https://hackmd.io/_uploads/BJCMyrnxZe.png)
+
 
 
 FIG: 三角形程式：非獨立型一般邊界測試
@@ -201,6 +203,8 @@ FIG: 三角形程式：非獨立型一般邊界測試
 :basketball: 如[游泳池收費系統](#SwimmingPool)，請改以非獨立測試進行。
 :::
 
+* [游泳池測試案例](https://docs.google.com/spreadsheets/d/1aE21HM1CCYPJtRBcb2hvYnHtOtqTdbzhQizSfn26hPk/edit?gid=0#gid=0)
+* [三角形測試案例](https://docs.google.com/spreadsheets/d/1fIEwtWf-MoXyBnr1eCET8lsrLSKQgCnYiq6w9WGZOMQ/edit?gid=1805558459#gid=1805558459)
 
 ## 5.3 等價分割測試
 
@@ -209,7 +213,10 @@ FIG: 三角形程式：非獨立型一般邊界測試
 - 希望能做完整的測試（而不是僅測試某一偏面）; 
 - 避免重複的測試。
 
-測試案例是等價的如果 (1) 他們是相同的事情; (2) 如果一個可以找到錯誤，其他的也可以; (3) 如果其中一個無法找到錯誤，其他的應該也找不到錯誤。
+測試案例是等價的如果 
+1. 他們是相同的事情; 
+2. 如果一個可以找到錯誤，其他的也可以; 
+3. 如果其中一個無法找到錯誤，其他的應該也找不到錯誤。
 
 :::info
 **Equivalence partitioning:** A software testing technique that divides the input data of a software unit into *partitions* of equivalent data from which test cases can be derived. In principle, test cases are designed to cover each partition *at least once*. This technique tries to define test cases that uncover classes of errors, thereby reducing the total number of test cases that must be developed. An advantage of this approach is reduction in the time required for testing a software due to lesser number of test cases.
@@ -224,7 +231,8 @@ FIG: 三角形程式：非獨立型一般邊界測試
 
 FIG: 等價分割測試（圓形表示弱涵蓋測試、三角形表示強涵蓋測試）
 
-<img src="https://hackmd.io/_uploads/rJPh4V8MT.png" width="450">
+![image](https://hackmd.io/_uploads/r1Pq1H2x-e.png)
+
 
 > :question: 
 總成績 (grade) 是由考試成績 (exam) 與作業成績 (hw) 合算出來的，其中考試成績佔60分，作業成績佔40分，輸入為 exam 與 hw 兩個成績, 輸出為總成績 A, B, C, D 四個等級分別代表 90, 80, 70以上及 70 以下。請利用等價劃分方法建立測試案例。
@@ -380,7 +388,7 @@ FIG: Binary Search 的等價分割測試（*k*: key; *a*: array; *f*: found; *c*
 #### Swimming-Pool-Simple
 :::info
 :basketball: 游泳池收費
-> 一個游泳池標準收費為 100 元。 (1) 星期六日200元, 除會員以外不打折。(2) 清晨6:00 以前所有人打八折; 中午11:00-13:00 九折 ▫  (3) 會員一律打五折。各打折不可重複，以最低價為主。
+> 凱旋游泳池標準收費為 100 元。 (1) 星期六日200元, 除會員以外不打折。(2) 清晨6:00 以前所有人打八折; 中午11:00-13:00 九折 ▫  (3) 會員一律打五折。各打折不可重複，以最低價為主。
  
 - d: {d1, d2} 分別代表 星期六日、一般時間。 
 - t: {t1, t2, t3} 分別代表清晨、中午、其他時段。

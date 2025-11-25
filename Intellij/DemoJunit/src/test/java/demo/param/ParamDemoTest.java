@@ -1,5 +1,6 @@
 package demo.param;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.*;
 
@@ -13,19 +14,20 @@ public class ParamDemoTest {
         assertTrue(StringUtils.isPalindrome(candidate));
     }
 
-    @ParameterizedTest
+    @DisplayName("Just testing integer is between 0 and 4")
+    @ParameterizedTest (name ="{0} is between 0 and 4")
     @ValueSource(ints = { 1, 2, 3 })
     void testWithValueSource(int argument) {
         assertTrue(argument > 0 && argument < 4);
     }
 
-    @ParameterizedTest
+    @ParameterizedTest(name = "{0} is prime")
     @ValueSource(ints={2,3,5,7,11})
     void testPrime(int argument) {
         assertTrue(MathUtils.isPrime((argument)));
     }
 
-    @ParameterizedTest
+    @ParameterizedTest(name = "{0} is not prime")
     @ValueSource(ints={1,4,6,9,51})
     void testNotPrime(int argument) {
         assertFalse(MathUtils.isPrime(argument));
