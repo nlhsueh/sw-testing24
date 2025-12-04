@@ -207,11 +207,8 @@ print Y
 
 ### MC/DC 涵蓋度
 
-MC/DC（Modified Condition/Decision Coverage，修正條件/決策涵蓋）是白箱測試中用於驗證複雜布林邏輯的黃金標準，尤其在航空、汽車、醫療等 安全關鍵（Safety-Critical）領域中，通常是強制要求的標準。
-
 MC/DC 的核心理念是：**確保每個條件（Condition）都能獨立地影響整個決策（Decision）的最終輸出結果。**
 
------
 
 #### 一、 MC/DC 的核心要求
 
