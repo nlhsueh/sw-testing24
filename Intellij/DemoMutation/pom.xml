@@ -71,39 +71,6 @@
                 </executions>
             </plugin>
 
-            <!-- https://mvnrepository.com/artifact/org.pitest/pitest-junit5-plugin -->
-
-
-            <!-- Pitest Mutation Testing Plugin -->
-            <plugin>
-                <groupId>org.pitest</groupId>
-                <artifactId>pitest-maven</artifactId>
-                <version>1.14.0</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.pitest</groupId>
-                        <artifactId>pitest-junit5-plugin</artifactId>
-                        <version>0.15</version>
-                    </dependency>
-                </dependencies>
-                <configuration>
-                    <!-- Specify classes and tests for mutation analysis -->
-                    <targetClasses>
-                        <param>demo.StringUtility</param>
-                    </targetClasses>
-                    <targetTests>
-                        <param>demo.*Test</param>
-                    </targetTests>
-                    <!-- Optional Configuration Parameters -->
-                    <mutators>STRONGER</mutators> <!-- Mutator strategy -->
-                    <threads>4</threads> <!-- Number of threads to use -->
-                    <timeoutConst>4000</timeoutConst> <!-- Timeout for each mutation -->
-                    <outputFormats>
-                        <param>HTML</param> <!-- Specify report format -->
-                    </outputFormats>
-                </configuration>
-            </plugin>
-
         </plugins>
     </build>
 
