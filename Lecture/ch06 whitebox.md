@@ -228,7 +228,7 @@ MC/DC 的核心理念是：**確保每個條件（Condition）都能獨立地影
 
 #### 二、 程式範例與 MC/DC 應用
 
-[See Example](條件涵蓋度百分百但並不滿足 MC/DC)
+[See Example](https://docs.google.com/spreadsheets/d/1Vs-44wjK8ipsNIYTRjKBwxJ3flpK_LmxlxQ775O1EwM/edit?gid=0#gid=0)
 
 ### 百分百涵蓋度的迷思
 
