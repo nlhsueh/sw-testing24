@@ -40,7 +40,7 @@ public class PrimeTest {
         assertArrayEquals(new int[]{2, 3, 5, 7}, result);
 
         // 驗證 mock 的方法是否被正確呼叫
-//        verify(mockChecker, times(1)).isPrime(1); // !!
+        verify(mockChecker, times(1)).isPrime(1); // !!
         verify(mockChecker, times(1)).isPrime(2);
         verify(mockChecker, times(1)).isPrime(3);
         verify(mockChecker, times(1)).isPrime(4);
